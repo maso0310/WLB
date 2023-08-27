@@ -46,9 +46,9 @@ def handle_message(event):
     if re.match('1451264564152156446',message):
         line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))
     else:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage('有什麼需要我幫忙的嗎???'))
+        #line_bot_api.reply_message(event.reply_token,TextSendMessage('有什麼需要我幫忙的嗎???'))
         #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
-        carousel_template_message = ImagemapSendMessage(
+        carousel_template_message = ImagemapSendMessage(text ='有什麼需要我幫忙的嗎???',
             base_url ="https://i.imgur.com/I9baIpi.jpg",
             alt_text='需要什麼服務嗎?',
             base_size=BaseSize(height=2000, width=2000),
