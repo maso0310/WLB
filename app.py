@@ -46,45 +46,62 @@ def handle_message(event):
     if re.match('1451264564152156446',message):
         line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))
     else:
+        confirm_template_message = TemplateSendMessage(
+            alt_text='問問題',
+            template=ConfirmTemplate(
+                text='你需要幫忙嗎???',
+                actions=[
+                    PostbackAction(
+                        label='我需要',
+                        data='action=其實不喜歡'
+                    ),
+                    MessageAction(
+                        label='我不需要',
+                    )
+                ]
+            )
+        )
+        if re.match('我需要',confirm_template_message):
         #line_bot_api.reply_message(event.reply_token,TextSendMessage('有什麼需要我幫忙的嗎???'))
         #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
-        carousel_template_message = ImagemapSendMessage(text ='有什麼需要我幫忙的嗎???',
-            base_url ="https://i.imgur.com/I9baIpi.jpg",
-            alt_text='需要什麼服務嗎?',
-            base_size=BaseSize(height=2000, width=2000),
-            actions=[
-                URIImagemapAction(
-                    #颱風
-                    link_uri="https://www.cwb.gov.tw/V8/C/P/Typhoon/TY_NEWS.html",
-                    area=ImagemapArea(
-                        x=0, y=0, width=1000, height=1000
+            carousel_template_message = ImagemapSendMessage(
+                base_url ="https://i.imgur.com/I9baIpi.jpg",
+                alt_text='需要什麼服務嗎?',
+                base_size=BaseSize(height=2000, width=2000),
+                actions=[
+                    URIImagemapAction(
+                        #颱風
+                        link_uri="https://www.cwb.gov.tw/V8/C/P/Typhoon/TY_NEWS.html",
+                        area=ImagemapArea(
+                            x=0, y=0, width=1000, height=1000
+                        )
+                    ),
+                    URIImagemapAction(
+                        #熱量
+                        link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
+                        area=ImagemapArea(
+                            x=1000, y=0, width=1000, height=1000
+                        )
+                    ),
+                    URIImagemapAction(
+                        #BMI
+                        link_uri="https://depart.femh.org.tw/dietary/3OPD/BMI.htm",
+                        area=ImagemapArea(
+                            x=0, y=1000, width=1000, height=1000
+                        )
+                    ),
+                    URIImagemapAction(
+                        #南台選課
+                        link_uri="https://course.stust.edu.tw/CourSel/Pages/QueryAndSelect.aspx",
+                        area=ImagemapArea(
+                            x=1000, y=1000, width=1000, height=1000
+                        )
                     )
-                ),
-                URIImagemapAction(
-                    #熱量
-                    link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
-                    area=ImagemapArea(
-                        x=1000, y=0, width=1000, height=1000
-                    )
-                ),
-                URIImagemapAction(
-                    #BMI
-                    link_uri="https://depart.femh.org.tw/dietary/3OPD/BMI.htm",
-                    area=ImagemapArea(
-                        x=0, y=1000, width=1000, height=1000
-                    )
-                ),
-                URIImagemapAction(
-                    #南台選課
-                    link_uri="https://course.stust.edu.tw/CourSel/Pages/QueryAndSelect.aspx",
-                    area=ImagemapArea(
-                        x=1000, y=1000, width=1000, height=1000
-                    )
-                )
-            ]
-        )
-        line_bot_api.reply_message(event.reply_token,carousel_template_message)
-
+                ]
+            )
+            line_bot_api.reply_message(event.reply_token,carousel_template_message)
+        else:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
        
 
 import os
