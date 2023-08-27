@@ -53,15 +53,17 @@ def handle_message(event):
                 actions=[
                     PostbackAction(
                         label='我需要',
-                        data='action=其實不喜歡'
+                        display_text='超需要',
+                        data='action=其實不需要'
                     ),
                     MessageAction(
                         label='我不需要',
+                        text='我不需要'
                     )
                 ]
             )
-        )
-        if re.match('我需要',confirm_template_message):
+        ),
+        if re.match('超需要',confirm_template_message):
         #line_bot_api.reply_message(event.reply_token,TextSendMessage('有什麼需要我幫忙的嗎???'))
         #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
             carousel_template_message = ImagemapSendMessage(
