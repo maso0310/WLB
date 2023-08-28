@@ -45,7 +45,7 @@ def handle_message(event):
     #文字表達
     if re.match('1451264564152156446',message):
         line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))
-    else:
+    elif re.match('幫幫我1',message):
         #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
             carousel_template_message = ImagemapSendMessage(
                 base_url ="https://i.imgur.com/I9baIpi.jpg",
@@ -82,7 +82,51 @@ def handle_message(event):
                     )
                 ]
             )
-            line_bot_api.reply_message(event.reply_token,carousel_template_message)
+    elif re.match('幫幫我2',message):
+        #多樣版組合按鈕
+       carousel_template_message = TemplateSendMessage(
+            alt_text='免費教學影片',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        #thumbnailImageUrl:縮圖連結，支援 jpg 和 png，最大寬度 1024px。
+                        thumbnail_image_url='https://shoplineimg.com/541acb0db32b41988d00001c/541e8aa3f577fe121e000049/800x.png?',
+                        #title:樣板標題。
+                        title='微積分教學youtube頻道',
+                        #樣板說明文字。
+                        text='萬丈高樓平地起',
+                        #actions:點擊按鈕觸發的行為，一個按鈕一種行為，最多支援四個按鈕。
+                        actions=[
+                            MessageAction(
+                                label='教學內容',
+                                text='微積分學在科學、商學和工程學領域有廣泛的應用，並成為了現代大學教育的重要組成部分，用來解決那些僅依靠代數學和幾何學不能有效解決的問題。'
+                           ),
+                            URIAction(
+                                label='觀看請點這',
+                                uri='https://www.youtube.com/@CUSTCourses/playlists?view=50&sort=dd&shelf_id=18'
+                            )
+                        ]
+                    ),
+                   CarouselColumn(
+                        thumbnail_image_url='https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/69/79/72/697972be-cf1b-557a-dcab-64cd665766b3/mza_14417997536117382377.jpeg/1200x600wp.png',
+                        title='AmazingTalker Show',
+                        text='娛樂節目',
+                        actions=[
+                            MessageAction(
+                                label='教學內容',
+                                text='學習如何與人互動、交流，還可以學到各種語言'
+                            ),
+                            URIAction(
+                                label='觀看請點這',
+                                uri='https://www.youtube.com/@amazingtalkershow/videos'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+    else:
+        line_bot_api.reply_message(event.reply_token,carousel_template_message)
        
        
 
