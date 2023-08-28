@@ -131,11 +131,11 @@ def handle_message(event):
                             MessageAction(
                                 label='其他選項',
                                 text='其他選項'
+                            ),
+                            URIAction(
+                                label='觀看請點這',
+                                uri='https://www.youtube.com/@amazingtalkershow/videos'
                             )
-                            #URIAction(
-                            #    label='觀看請點這',
-                            #    uri='https://www.youtube.com/@amazingtalkershow/videos'
-                            #)
                         ]
                     )
 
