@@ -47,7 +47,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))
     elif re.match('幫幫我1',message):
         #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
-            carousel_template_message = ImagemapSendMessage(
+            carousel_template_message1 = ImagemapSendMessage(
                 base_url ="https://i.imgur.com/I9baIpi.jpg",
                 alt_text='需要什麼服務嗎?',
                 base_size=BaseSize(height=2000, width=2000),
@@ -82,6 +82,7 @@ def handle_message(event):
                     )
                 ]
             )
+            line_bot_api.reply_message(event.reply_token, carousel_template_message1)
     elif re.match('幫幫我2',message):
         #多樣版組合按鈕
        carousel_template_message = TemplateSendMessage(
@@ -125,8 +126,9 @@ def handle_message(event):
                 ]
             )
         )
+       line_bot_api.reply_message(event.reply_token,carousel_template_message)
     else:
-        line_bot_api.reply_message(event.reply_token,carousel_template_message)
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
        
        
 
