@@ -315,15 +315,25 @@ def handle_message(event):
             template=ConfirmTemplate(
                 text='需要我幫忙嗎？',
                 actions=[
-                    PostbackAction(
-                        label='呼叫機器人',
-                        display_text='呼叫機器人',
-                        data='action=其實不喜歡'
-                    ),
+                     
+                    #PostbackAction(
+                    #    label='呼叫機器人',
+                    #   display_text='呼叫機器人',
+                    #    data='action=其實不喜歡'
+                    #),
                     MessageAction(
+                        label='呼叫機器人',
+                        text='呼叫機器人'
+                    ),
+                    PostbackAction(
                         label='不需要謝謝!',
-                        text='不需要謝謝!'
+                        display_text='不需要謝謝!',
+                        data='action=其實不需要謝謝!'
                     )
+                    #MessageAction(
+                    #    label='不需要謝謝!',
+                    #    text='不需要謝謝!'
+                    #)
                 ]
             )
         )
