@@ -117,50 +117,50 @@ def handle_message(event):
     elif re.match('其他選項',message):
          #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
             carousel_template_message2 = ImagemapSendMessage(
-                base_url ="https://i.imgur.com/W3Pbrm1.jpg",
+                base_url ="https://i.imgur.com/eOpIya3.jpg",
                 alt_text='需要什麼服務嗎?',
-                base_size=BaseSize(height=1685.4, width=2500),
+                base_size=BaseSize(height=1330, width=2000),
                 actions=[
                     URIImagemapAction(
                         #bmi
                         link_uri="https://depart.femh.org.tw/dietary/3OPD/BMI.htm",
                         area=ImagemapArea(
-                            x=0, y=0, width=837, height=843
+                            x=0, y=0, width=667, height=665
                         )
                     ),
                     URIImagemapAction(
                         #天氣預報
                         link_uri="https://www.cwb.gov.tw/V8/C/W/week.html",
                         area=ImagemapArea(
-                            x=837, y=0, width=829, height=843
+                            x=667, y=0, width=666, height=665
                         )
                     ),
                     URIImagemapAction(
                         #飲食熱量
                         link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
                         area=ImagemapArea(
-                            x=1666, y=0, width=834, height=843
+                            x=1333, y=0, width=667, height=665
                         )
                     ),
                     URIImagemapAction(
                         #南台選課
                         link_uri="https://course.stust.edu.tw/CourSel/Pages/QueryAndSelect.aspx",
                         area=ImagemapArea(
-                            x=0, y=843, width=837, height=842.4
+                            x=0, y=665, width=667, height=665
                         )
                     ),
                     URIImagemapAction(
                         #杜芳子菜單
                         link_uri="https://www.popdaily.com.tw/forum/food/1190866",
                         area=ImagemapArea(
-                            x=837, y=843, width=829, height=842.4
+                            x=667, y=665, width=666, height=665
                         )
                     ),
                     URIImagemapAction(
                         #youtube影片
                         text='查看影片',
                         area=ImagemapArea(
-                            x=1666, y=843, width=834, height=842.4
+                            x=1333, y=665, width=667, height=665
                         )
                     )
                 ]
