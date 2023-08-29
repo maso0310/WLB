@@ -222,13 +222,14 @@ def handle_message(event):
                         #title:樣板標題。
                         title='微積分教學youtube頻道',
                         #樣板說明文字。
-                        text='萬丈高樓平地起',
+                        text='有關微積分教學影片',
                         #actions:點擊按鈕觸發的行為，一個按鈕一種行為，最多支援四個按鈕。
                         actions=[
-                            MessageAction(
-                                label='教學內容',
-                                text='微積分學在科學、商學和工程學領域有廣泛的應用，並成為了現代大學教育的重要組成部分，用來解決那些僅依靠代數學和幾何學不能有效解決的問題。'
-                           ),
+                            PostbackAction(
+                                label='詳細內容',
+                                display_text='微積分學在科學、商學和工程學領域有廣泛的應用，並成為了現代大學教育的重要組成部分，用來解決那些僅依靠代數學和幾何學不能有效解決的問題。',
+                                data='action=其實不需要謝謝!'
+                            ),
                             URIAction(
                                 label='觀看請點這',
                                 uri='https://www.youtube.com/@CUSTCourses/playlists?view=50&sort=dd&shelf_id=18'
@@ -240,9 +241,10 @@ def handle_message(event):
                         title='AmazingTalker Show',
                         text='娛樂節目',
                         actions=[
-                            MessageAction(
-                                label='教學內容',
-                                text='學習如何與人互動、交流，還可以學到各種語言'
+                            PostbackAction(
+                                label='詳細內容',
+                                display_text='學習如何與人互動、交流，還可以學到各種語言',
+                                data='action=其實不需要謝謝!'
                             ),
                             URIAction(
                                 label='觀看請點這',
@@ -255,13 +257,14 @@ def handle_message(event):
                         title='AmazingTalker Show',
                         text='娛樂節目',
                         actions=[
-                            MessageAction(
-                                label='其他選項',
-                                text='其他選項'
+                            PostbackAction(
+                                label='詳細內容',
+                                display_text='探討國際社會相關問題',
+                                data='action=其實不需要謝謝!'
                             ),
                             URIAction(
                                 label='觀看請點這',
-                                uri='https://www.youtube.com/@amazingtalkershow/videos'
+                                uri='https://www.youtube.com/@ebcCTime/videos'
                             )
                         ]
                     )
