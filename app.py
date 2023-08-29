@@ -46,170 +46,11 @@ def handle_message(event):
     if re.match('呼叫機器人',message):
         flex_message = TextSendMessage(text='需要什麼幫忙嗎???',
                             quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="颱風情報", text="颱風情報")),
-                                QuickReplyButton(action=MessageAction(label="南台選課", text="南台選課")),
-                                QuickReplyButton(action=MessageAction(label="BMI值計算", text="BMI值計算")),
-                                QuickReplyButton(action=MessageAction(label="食物熱量查詢", text="食物熱量查詢")),
                                 QuickReplyButton(action=MessageAction(label="查看影片", text="查看影片")),
-                                QuickReplyButton(action=MessageAction(label="其他選項", text="其他選項")),
-                                QuickReplyButton(action=MessageAction(label="按我", text="按！")),
-                                QuickReplyButton(action=MessageAction(label="按我", text="按！")),
-                                QuickReplyButton(action=MessageAction(label="按我", text="按！"))
+                                QuickReplyButton(action=MessageAction(label="其他選項", text="其他選項"))
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
-        #line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))
-    elif re.match('颱風情報',message):
-        #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
-            carousel_template_message1 = ImagemapSendMessage(
-                base_url ="https://i.imgur.com/I9baIpi.jpg",
-                alt_text='需要什麼服務嗎?',
-                base_size=BaseSize(height=2000, width=2000),
-                actions=[
-                    URIImagemapAction(
-                        #颱風
-                        link_uri="https://www.cwb.gov.tw/V8/C/P/Typhoon/TY_NEWS.html",
-                        area=ImagemapArea(
-                            x=0, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #熱量
-                        link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
-                        area=ImagemapArea(
-                            x=1000, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #BMI
-                        link_uri="https://depart.femh.org.tw/dietary/3OPD/BMI.htm",
-                        area=ImagemapArea(
-                            x=0, y=1000, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #南台選課
-                        link_uri="https://course.stust.edu.tw/CourSel/Pages/QueryAndSelect.aspx",
-                        area=ImagemapArea(
-                            x=1000, y=1000, width=1000, height=1000
-                        )
-                    )
-                ]
-            )
-            line_bot_api.reply_message(event.reply_token, carousel_template_message1)
-    elif re.match('南台選課',message):
-        #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
-            carousel_template_message1 = ImagemapSendMessage(
-                base_url ="https://i.imgur.com/I9baIpi.jpg",
-                alt_text='需要什麼服務嗎?',
-                base_size=BaseSize(height=2000, width=2000),
-                actions=[
-                    URIImagemapAction(
-                        #颱風
-                        link_uri="https://www.cwb.gov.tw/V8/C/P/Typhoon/TY_NEWS.html",
-                        area=ImagemapArea(
-                            x=0, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #熱量
-                        link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
-                        area=ImagemapArea(
-                            x=1000, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #BMI
-                        link_uri="https://depart.femh.org.tw/dietary/3OPD/BMI.htm",
-                        area=ImagemapArea(
-                            x=0, y=1000, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #南台選課
-                        link_uri="https://course.stust.edu.tw/CourSel/Pages/QueryAndSelect.aspx",
-                        area=ImagemapArea(
-                            x=1000, y=1000, width=1000, height=1000
-                        )
-                    )
-                ]
-            )
-            line_bot_api.reply_message(event.reply_token, carousel_template_message1)
-    elif re.match('BMI值計算',message):
-        #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
-            carousel_template_message1 = ImagemapSendMessage(
-                base_url ="https://i.imgur.com/I9baIpi.jpg",
-                alt_text='需要什麼服務嗎?',
-                base_size=BaseSize(height=2000, width=2000),
-                actions=[
-                    URIImagemapAction(
-                        #颱風
-                        link_uri="https://www.cwb.gov.tw/V8/C/P/Typhoon/TY_NEWS.html",
-                        area=ImagemapArea(
-                            x=0, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #熱量
-                        link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
-                        area=ImagemapArea(
-                            x=1000, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #BMI
-                        link_uri="https://depart.femh.org.tw/dietary/3OPD/BMI.htm",
-                        area=ImagemapArea(
-                            x=0, y=1000, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #南台選課
-                        link_uri="https://course.stust.edu.tw/CourSel/Pages/QueryAndSelect.aspx",
-                        area=ImagemapArea(
-                            x=1000, y=1000, width=1000, height=1000
-                        )
-                    )
-                ]
-            )
-            line_bot_api.reply_message(event.reply_token, carousel_template_message1)
-    elif re.match('食物熱量查詢',message):
-        #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
-            carousel_template_message1 = ImagemapSendMessage(
-                base_url ="https://i.imgur.com/I9baIpi.jpg",
-                alt_text='需要什麼服務嗎?',
-                base_size=BaseSize(height=2000, width=2000),
-                actions=[
-                    URIImagemapAction(
-                        #颱風
-                        link_uri="https://www.cwb.gov.tw/V8/C/P/Typhoon/TY_NEWS.html",
-                        area=ImagemapArea(
-                            x=0, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #熱量
-                        link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
-                        area=ImagemapArea(
-                            x=1000, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #BMI
-                        link_uri="https://depart.femh.org.tw/dietary/3OPD/BMI.htm",
-                        area=ImagemapArea(
-                            x=0, y=1000, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #南台選課
-                        link_uri="https://course.stust.edu.tw/CourSel/Pages/QueryAndSelect.aspx",
-                        area=ImagemapArea(
-                            x=1000, y=1000, width=1000, height=1000
-                        )
-                    )
-                ]
-            )
-            line_bot_api.reply_message(event.reply_token, carousel_template_message1)
+        #line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))   
     elif re.match('查看影片',message):
         #多樣版組合按鈕
        carousel_template_message = TemplateSendMessage(
@@ -276,36 +117,50 @@ def handle_message(event):
     elif re.match('其他選項',message):
          #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
             carousel_template_message2 = ImagemapSendMessage(
-                base_url ="https://i.imgur.com/I9baIpi.jpg",
+                base_url ="https://i.imgur.com/W3Pbrm1.jpg",
                 alt_text='需要什麼服務嗎?',
-                base_size=BaseSize(height=2000, width=2000),
+                base_size=BaseSize(height=1685.4, width=2500),
                 actions=[
                     URIImagemapAction(
-                        #颱風
-                        link_uri="https://www.cwb.gov.tw/V8/C/P/Typhoon/TY_NEWS.html",
-                        area=ImagemapArea(
-                            x=0, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #熱量
-                        link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
-                        area=ImagemapArea(
-                            x=1000, y=0, width=1000, height=1000
-                        )
-                    ),
-                    URIImagemapAction(
-                        #BMI
+                        #bmi
                         link_uri="https://depart.femh.org.tw/dietary/3OPD/BMI.htm",
                         area=ImagemapArea(
-                            x=0, y=1000, width=1000, height=1000
+                            x=0, y=0, width=837, height=843
+                        )
+                    ),
+                    URIImagemapAction(
+                        #天氣預報
+                        link_uri="https://www.cwb.gov.tw/V8/C/W/week.html",
+                        area=ImagemapArea(
+                            x=837, y=0, width=829, height=843
+                        )
+                    ),
+                    URIImagemapAction(
+                        #飲食熱量
+                        link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
+                        area=ImagemapArea(
+                            x=1666, y=0, width=834, height=843
                         )
                     ),
                     URIImagemapAction(
                         #南台選課
                         link_uri="https://course.stust.edu.tw/CourSel/Pages/QueryAndSelect.aspx",
                         area=ImagemapArea(
-                            x=1000, y=1000, width=1000, height=1000
+                            x=0, y=843, width=837, height=842.4
+                        )
+                    ),
+                    URIImagemapAction(
+                        #杜芳子菜單
+                        link_uri="https://www.popdaily.com.tw/forum/food/1190866",
+                        area=ImagemapArea(
+                            x=837, y=843, width=829, height=842.4
+                        )
+                    ),
+                    URIImagemapAction(
+                        #youtube影片
+                        text='查看影片',
+                        area=ImagemapArea(
+                            x=1666, y=843, width=834, height=842.4
                         )
                     )
                 ]
