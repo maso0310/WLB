@@ -309,7 +309,26 @@ def handle_message(event):
             )
             line_bot_api.reply_message(event.reply_token, carousel_template_message2)
     else:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
+        #選擇按鈕
+        confirm_template_message = TemplateSendMessage(
+            alt_text='問問題',
+            template=ConfirmTemplate(
+                text='需要我幫忙嗎？',
+                actions=[
+                    PostbackAction(
+                        label='呼叫機器人',
+                        display_text='呼叫機器人',
+                        data='action=其實不喜歡'
+                    ),
+                    MessageAction(
+                        label='不需要謝謝!',
+                        text='不需要謝謝!'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, confirm_template_message)
+        #line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
        
        
 
