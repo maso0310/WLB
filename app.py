@@ -253,9 +253,9 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/69/79/72/697972be-cf1b-557a-dcab-64cd665766b3/mza_14417997536117382377.jpeg/1200x600wp.png',
-                        title='AmazingTalker Show',
-                        text='娛樂節目',
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/zh/thumb/4/48/ETTV_Crucial_Moment.jpg/250px-ETTV_Crucial_Moment.jpg',
+                        title='關鍵時刻',
+                        text='新聞節目',
                         actions=[
                             PostbackAction(
                                 label='詳細內容',
