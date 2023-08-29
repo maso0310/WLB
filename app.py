@@ -156,7 +156,7 @@ def handle_message(event):
                             x=667, y=665, width=666, height=665
                         )
                     ),
-                    URIImagemapAction(
+                    MessageImagemapAction(
                         #youtube影片
                         text='查看影片',
                         area=ImagemapArea(
