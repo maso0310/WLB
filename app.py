@@ -213,17 +213,17 @@ def handle_message(event):
                 actions=[
                     MessageAction(
                         label='小杯',
-                        text='經典好茶道系列小杯'
+                        text='小杯經典好茶道系列'
                     ),
                     MessageAction(
                         label='大杯',
-                        text='經典好茶道系列大杯'
+                        text='大杯經典好茶道系列'
                     )
                 ]
             )
         )
         line_bot_api.reply_message(event.reply_token, confirm_template_message)
-    elif re.match('經典好茶道系列小杯',message):
+    elif re.match('小杯經典好茶道系列',message):
         flex_message = FlexSendMessage(
             alt_text='行銷',
             contents={
@@ -446,11 +446,10 @@ def handle_message(event):
             }
         )
         line_bot_api.reply_message(event.reply_token, flex_message)
-    elif re.match('經典好茶道系列大杯',message):
+    elif re.match('大杯經典好茶道系列',message):
         flex_message = FlexSendMessage(
             alt_text='行銷',
-            contents=
-            {
+            contents={
                 "type": "bubble",
                 "hero": {
                     "type": "image",
