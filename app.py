@@ -168,7 +168,7 @@ def handle_message(event):
             )
             line_bot_api.reply_message(event.reply_token, carousel_template_message2)
     #大圖按鈕
-    if re.match('想喝手搖杯',message):
+    elif re.match('想喝手搖杯',message):
         image_carousel_template_message = TemplateSendMessage(
             alt_text='免費教學影片',
             template=ImageCarouselTemplate(
