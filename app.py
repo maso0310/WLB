@@ -230,13 +230,14 @@ def handle_message(event):
                 "type": "bubble",
                 "hero": {
                     "type": "image",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
+                    "url": "https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg",
                     "size": "full",
                     "aspectRatio": "20:13",
                     "aspectMode": "cover",
                     "action": {
-                        "type": "uri",
-                        "uri": "https://linecorp.com"
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
                     }
                 },
                 "body": {
@@ -244,8 +245,9 @@ def handle_message(event):
                     "layout": "vertical",
                     "spacing": "md",
                     "action": {
-                        "type": "uri",
-                        "uri": "https://linecorp.com"
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
                     },
                     "contents": [
                         {
@@ -453,7 +455,7 @@ def handle_message(event):
                 "type": "bubble",
                 "hero": {
                     "type": "image",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
+                    "url": "https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg",
                     "size": "full",
                     "aspectRatio": "20:13",
                     "aspectMode": "cover",
