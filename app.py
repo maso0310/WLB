@@ -192,7 +192,38 @@ def handle_message(event):
             )
         )
         line_bot_api.reply_message(event.reply_token, image_carousel_template_message)
+     #選擇按鈕
     elif re.match('CoCo菜單',message):
+        flex_message = TextSendMessage(text='想要系列???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="經典好茶道", text="經典好茶道")),
+                                QuickReplyButton(action=MessageAction(label="繽紛水果茶", text="繽紛水果茶")),
+                                QuickReplyButton(action=MessageAction(label="簡單喝奶茶", text="簡單喝奶茶")),
+                                QuickReplyButton(action=MessageAction(label="新品專區", text="新品專區")),
+                                QuickReplyButton(action=MessageAction(label="濃濃醇鮮奶", text="濃濃醇鮮奶")),
+                                QuickReplyButton(action=MessageAction(label="季節限定", text="季節限定")),
+                                QuickReplyButton(action=MessageAction(label="醇品咖啡香", text="醇品咖啡香"))
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('經典好茶道',message):
+        confirm_template_message = TemplateSendMessage(
+            alt_text='問問題',
+            template=ConfirmTemplate(
+                text='大杯/小杯？',
+                actions=[
+                    MessageAction(
+                        label='小杯',
+                        text='經典好茶道系列小杯'
+                    ),
+                    MessageAction(
+                        label='大杯',
+                        text='經典好茶道系列大杯'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, confirm_template_message)
+    elif re.match('經典好茶道系列小杯',message):
         flex_message = FlexSendMessage(
             alt_text='行銷',
             contents={
@@ -213,8 +244,8 @@ def handle_message(event):
                     "layout": "vertical",
                     "spacing": "md",
                     "action": {
-                    "type": "uri",
-                    "uri": "https://linecorp.com"
+                        "type": "uri",
+                        "uri": "https://linecorp.com"
                     },
                     "contents": [
                         {
@@ -402,6 +433,232 @@ def handle_message(event):
                                         {
                                             "type": "text",
                                             "text": "$35",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        )
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('經典好茶道系列大杯',message):
+        flex_message = FlexSendMessage(
+            alt_text='行銷',
+            contents=
+            {
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
+                    "size": "full",
+                    "aspectRatio": "20:13",
+                    "aspectMode": "cover",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    }
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                    "type": "postback",
+                    "label": "action",
+                    "data": "hello"
+                    },
+                    "contents": [
+                        {
+                            "type": "text",
+                            "size": "xl",
+                            "weight": "bold",
+                            "text": "CoCo都可 2023年9月菜單"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "茉莉綠茶"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$35",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "四季春青茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$35",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "手採紅茶"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$35",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "焙韻鐵觀音"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$40",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "伯爵果茶"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$40",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "伯爵蜜香凍果茶"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$50",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "四季珍椰青"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$45",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "蜜香凍(紅/綠/清茶)"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$45",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "仙草蜜"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$40",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
