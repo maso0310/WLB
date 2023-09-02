@@ -177,7 +177,7 @@ def handle_message(event):
                         image_url='https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg',
                         action=PostbackAction(
                             label='CoCo飲料店',
-                            text='CoCo菜單'
+                            display_text='CoCo菜單'
                         )
                     ),
                     ImageCarouselColumn(
