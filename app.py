@@ -205,268 +205,9 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="醇品咖啡香", text="醇品咖啡香"))
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
+   
+   
     elif re.match('經典好茶道',message):
-        confirm_template_message = TemplateSendMessage(
-            alt_text='問問題',
-            template=ConfirmTemplate(
-                text='大杯/中杯？',
-                actions=[
-                    MessageAction(
-                        label='中杯',
-                        text='中杯經典好茶道系列'
-                    ),
-                    MessageAction(
-                        label='大杯',
-                        text='大杯經典好茶道系列'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, confirm_template_message)
-    elif re.match('繽紛水果茶',message):
-        confirm_template_message = TemplateSendMessage(
-            alt_text='問問題',
-            template=ConfirmTemplate(
-                text='大杯/中杯？',
-                actions=[
-                    MessageAction(
-                        label='中杯',
-                        text='中杯繽紛水果茶系列'
-                    ),
-                    MessageAction(
-                        label='大杯',
-                        text='大杯繽紛水果茶系列'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, confirm_template_message)
-    elif re.match('中杯經典好茶道系列',message):
-        flex_message = FlexSendMessage(
-            alt_text='行銷',
-            contents={
-                "type": "bubble",
-                "hero": {
-                    "type": "image",
-                    "url": "https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg",
-                    "size": "full",
-                    "aspectRatio": "20:13",
-                    "aspectMode": "cover",
-                    "action": {
-                        "type": "postback",
-                        "label": "action",
-                        "data": "hello"
-                    }
-                },
-                "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "md",
-                    "action": {
-                        "type": "postback",
-                        "label": "action",
-                        "data": "hello"
-                    },
-                    "contents": [
-                        {
-                            "type": "text",
-                            "size": "xl",
-                            "weight": "bold",
-                            "text": "CoCo都可 2023年9月菜單"
-                        },
-                        {
-                            "type": "box",
-                            "layout": "vertical",
-                            "spacing": "sm",
-                            "contents": [
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0,
-                                            "text": "茉莉綠茶"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$30",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "四季春青茶",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$30",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0,
-                                            "text": "手採紅茶"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$30",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0,
-                                            "text": "焙韻鐵觀音"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$35",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0,
-                                            "text": "伯爵果茶"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$35",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0,
-                                            "text": "伯爵蜜香凍果茶"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$45",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0,
-                                            "text": "四季珍椰青"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$40",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0,
-                                            "text": "蜜香凍(紅/綠/清茶)"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$40",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0,
-                                            "text": "仙草蜜"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$35",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        )
-        line_bot_api.reply_message(event.reply_token, flex_message)
-    elif re.match('大杯經典好茶道系列',message):
         flex_message = FlexSendMessage(
             alt_text='行銷',
             contents={
@@ -510,14 +251,7 @@ def handle_message(event):
                                     "contents": [
                                         {
                                             "type": "text",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0,
-                                            "text": "茉莉綠茶"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$35",
+                                            "text": "中 / 大",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -530,14 +264,34 @@ def handle_message(event):
                                     "contents": [
                                         {
                                             "type": "text",
-                                            "text": "四季春青茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "☆茉莉綠茶"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$30/$35",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "★四季春青茶",
                                             "weight": "bold",
                                             "margin": "sm",
                                             "flex": 0
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$35",
+                                            "text": "$30/$35",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -553,11 +307,11 @@ def handle_message(event):
                                             "weight": "bold",
                                             "margin": "sm",
                                             "flex": 0,
-                                            "text": "手採紅茶"
+                                            "text": "☆手採紅茶"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$35",
+                                            "text": "$30/$35",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -573,11 +327,11 @@ def handle_message(event):
                                             "weight": "bold",
                                             "margin": "sm",
                                             "flex": 0,
-                                            "text": "焙韻鐵觀音"
+                                            "text": "★焙韻鐵觀音"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$40",
+                                            "text": "$35/$40",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -593,11 +347,11 @@ def handle_message(event):
                                             "weight": "bold",
                                             "margin": "sm",
                                             "flex": 0,
-                                            "text": "伯爵果茶"
+                                            "text": "★伯爵果茶"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$40",
+                                            "text": "$35/$40",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -613,11 +367,11 @@ def handle_message(event):
                                             "weight": "bold",
                                             "margin": "sm",
                                             "flex": 0,
-                                            "text": "伯爵蜜香凍果茶"
+                                            "text": "☆伯爵蜜香凍果茶"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$50",
+                                            "text": "$45/$50",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -633,11 +387,11 @@ def handle_message(event):
                                             "weight": "bold",
                                             "margin": "sm",
                                             "flex": 0,
-                                            "text": "四季珍椰青"
+                                            "text": "☆四季珍椰青"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$45",
+                                            "text": "$40/$45",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -653,11 +407,11 @@ def handle_message(event):
                                             "weight": "bold",
                                             "margin": "sm",
                                             "flex": 0,
-                                            "text": "蜜香凍(紅/綠/清茶)"
+                                            "text": "☆蜜香凍(紅/綠/清茶)"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$45",
+                                            "text": "$40/$45",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -673,11 +427,11 @@ def handle_message(event):
                                             "weight": "bold",
                                             "margin": "sm",
                                             "flex": 0,
-                                            "text": "仙草蜜"
+                                            "text": "☆仙草蜜"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$40",
+                                            "text": "$35/$40",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -691,7 +445,7 @@ def handle_message(event):
             }
         )
         line_bot_api.reply_message(event.reply_token, flex_message)
-    elif re.match('中杯繽紛水果茶系列',message):
+    elif re.match('繽紛水果茶',message):
         flex_message = FlexSendMessage(
             alt_text='行銷',
             contents={
@@ -735,6 +489,19 @@ def handle_message(event):
                                     "contents": [
                                         {
                                             "type": "text",
+                                            "text": "中 / 大",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
                                             "text": "☆百香綠茶",
                                             "weight": "bold",
                                             "margin": "sm",
@@ -742,7 +509,7 @@ def handle_message(event):
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$35",
+                                            "text": "$35/$40",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -762,7 +529,7 @@ def handle_message(event):
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$35",
+                                            "text": "$35/$40",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -782,7 +549,7 @@ def handle_message(event):
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$35",
+                                            "text": "$35/$40",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -802,7 +569,7 @@ def handle_message(event):
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$35 ",
+                                            "text": "$35/$40",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -822,7 +589,7 @@ def handle_message(event):
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$40 ",
+                                            "text": "$40/$45",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -842,7 +609,7 @@ def handle_message(event):
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$40 ",
+                                            "text": "$40/$45",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -862,7 +629,7 @@ def handle_message(event):
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$45",
+                                            "text": "$45/$50",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -882,7 +649,7 @@ def handle_message(event):
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$50",
+                                            "text": "$50/$55",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -905,7 +672,7 @@ def handle_message(event):
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa",
-                                            "text": "$55"
+                                            "text": "$55/$60"
                                         }
                                     ]
                                 },
@@ -922,252 +689,7 @@ def handle_message(event):
                                         },
                                         {
                                             "type": "text",
-                                            "text": "$60",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        )
-        line_bot_api.reply_message(event.reply_token, flex_message)
-    elif re.match('大杯繽紛水果茶系列',message):
-        flex_message = FlexSendMessage(
-            alt_text='行銷',
-            contents={
-                "type": "bubble",
-                "hero": {
-                    "type": "image",
-                    "url": "https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg",
-                    "size": "full",
-                    "aspectRatio": "20:13",
-                    "aspectMode": "cover",
-                    "action": {
-                        "type": "postback",
-                        "label": "action",
-                        "data": "hello"
-                    }
-                },
-                "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "md",
-                    "action": {
-                        "type": "postback",
-                        "label": "action",
-                        "data": "hello"
-                    },
-                    "contents": [
-                        {
-                            "type": "text",
-                            "text": "繽紛水果茶",
-                            "size": "xl",
-                            "weight": "bold"
-                        },
-                        {
-                            "type": "box",
-                            "layout": "vertical",
-                            "spacing": "sm",
-                            "contents": [
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "☆百香綠茶",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$40",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "☆鮮檸檬(紅/綠/青茶)",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$40",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "☆芒果綠茶",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$40",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "☆檸檬冬瓜露",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$40",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "☆冬瓜西谷米",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$45",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "☆蕎麥冬瓜露",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$45",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "★蜜香檸凍(紅/綠/青/冬)",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$50",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "☆金桔檸檬",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$55",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "☆鲜榨蘋果百香",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "size": "sm",
-                                            "align": "end",
-                                            "color": "#aaaaaa",
-                                            "text": "$60"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "baseline",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "☆鮮香橙冰茶",
-                                            "weight": "bold",
-                                            "margin": "sm",
-                                            "flex": 0
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "$65",
+                                            "text": "$60/$65",
                                             "size": "sm",
                                             "align": "end",
                                             "color": "#aaaaaa"
@@ -1261,6 +783,7 @@ def handle_message(event):
             }
         )
         line_bot_api.reply_message(event.reply_token, flex_message)
+   
     else:
         #選擇按鈕
         confirm_template_message = TemplateSendMessage(
