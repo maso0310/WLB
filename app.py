@@ -783,7 +783,839 @@ def handle_message(event):
             }
         )
         line_bot_api.reply_message(event.reply_token, flex_message)
-   
+    elif re.match('簡單喝奶茶',message):
+        flex_message = FlexSendMessage(
+            alt_text='行銷',
+            contents={
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg",
+                    "size": "full",
+                    "aspectRatio": "20:13",
+                    "aspectMode": "cover",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    }
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    },
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "簡單喝奶茶",
+                            "size": "xl",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "中 / 大",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆阿薩姆奶茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$35/$40",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "★珍珠奶茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$45/$50",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆西谷米奶茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$45/$50",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆鐵觀音奶茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$45/$50",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆布丁奶茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$45/$50",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "★奶茶三兄弟",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$55",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "★雲朵奶蓋(紅/綠茶)",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$45/$50",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆伯爵奶蓋紅茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$45/$50",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        )
+        line_bot_api.reply_message(event.reply_token, flex_message) 
+    elif re.match('新品專區',message):
+        flex_message = FlexSendMessage(
+            alt_text='行銷',
+            contents={
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg",
+                    "size": "full",
+                    "aspectRatio": "20:13",
+                    "aspectMode": "cover",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    }
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    },
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "新品專區",
+                            "size": "xl",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "中 / 大",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆纖細楊枝甘露",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$70/$90",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆胖胖楊枝甘露",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$70/$90",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆輕盈楊枝甘露",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$60/$80",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆蜜橘果茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$60/-無-",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa",
+                                            "position": "relative"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆蜜橘優酪",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$70/-無-",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "☆椰奶啵啵恰恰"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$65/-無-",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        )
+        line_bot_api.reply_message(event.reply_token, flex_message) 
+    elif re.match('濃濃醇鮮奶',message):
+        flex_message = FlexSendMessage(
+            alt_text='行銷',
+            contents={
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg",
+                    "size": "full",
+                    "aspectRatio": "20:13",
+                    "aspectMode": "cover",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    }
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    },
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "濃濃醇鮮奶",
+                            "size": "xl",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "中 / 大",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆英式鮮奶茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$55/$70",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "★珍珠鮮奶茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$60/$70",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆鐵觀音鮮奶茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$60/$70",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆伯爵厚鮮奶茶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$65/$75",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa",
+                                            "position": "relative"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "★芋頭牛奶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$65/-無-",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "text": "☆芋頭西谷米牛奶"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$70/-無-",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        )
+        line_bot_api.reply_message(event.reply_token, flex_message) 
+    elif re.match('季節限定',message):
+        flex_message = FlexSendMessage(
+            alt_text='行銷',
+            contents={
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg",
+                    "size": "full",
+                    "aspectRatio": "20:13",
+                    "aspectMode": "cover",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    }
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    },
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "季節限定",
+                            "size": "xl",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "中 / 大",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆芒果冰沙",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$50/$60",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆芒果歐蕾",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$60/$75",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆綠豆沙",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$50/$60",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "★綠豆沙牛奶",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$60/$75",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa",
+                                            "position": "relative"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        )
+        line_bot_api.reply_message(event.reply_token, flex_message) 
+    elif re.match('醇品咖啡香',message):
+        flex_message = FlexSendMessage(
+            alt_text='行銷',
+            contents={
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://images.deliveryhero.io/image/fd-tw/LH/q716-hero.jpg",
+                    "size": "full",
+                    "aspectRatio": "20:13",
+                    "aspectMode": "cover",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    }
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello"
+                    },
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "醇品咖啡香",
+                            "size": "xl",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "16oz",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆美式咖啡",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$45",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "☆拿鐵咖啡",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$60",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "★珍珠拿鐵咖啡",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "$65",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        )
+        line_bot_api.reply_message(event.reply_token, flex_message) 
     else:
         #選擇按鈕
         confirm_template_message = TemplateSendMessage(
