@@ -204,7 +204,7 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="醇品咖啡香", text="醇品咖啡香"))
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
-    elif re.match('50嵐飲料店',message):
+    elif re.match('50嵐菜單',message):
         flex_message = TextSendMessage(text='想要系列???',
                             quick_reply=QuickReply(items=[
                                 QuickReplyButton(action=MessageAction(label="找好茶", text="找好茶")),
