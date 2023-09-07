@@ -3164,8 +3164,8 @@ def handle_message(event):
     elif re.match('東部CoCo飲料店',message):
         flex_message = TextSendMessage(text='哪一縣市???',
                             quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="花蓮縣", text="抱歉沒有相關資訊")),
-                                QuickReplyButton(action=MessageAction(label="臺東縣", text="抱歉沒有相關資訊"))                     
+                                QuickReplyButton(action=PostbackAction(label="花蓮縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!')),
+                                QuickReplyButton(action=PostbackAction(label="臺東縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!'))            
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
 #台灣北部----------------------------------------------------
