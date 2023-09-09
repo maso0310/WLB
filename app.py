@@ -2099,6 +2099,23 @@ def handle_message(event):
                             ]
                         }
                     ]
+                },
+                 "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#905c44",
+                            "margin": "xxl",
+                            "action": {
+                                "type": "message",
+                                "label": "地址前往",
+                                "text": "50嵐飲料店"
+                            }
+                        }
+                    ]
                 }
             }
         )
@@ -2457,6 +2474,23 @@ def handle_message(event):
                             ]
                         }
                     ]
+                },
+                 "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#905c44",
+                            "margin": "xxl",
+                            "action": {
+                                "type": "message",
+                                "label": "地址前往",
+                                "text": "50嵐飲料店"
+                            }
+                        }
+                    ]
                 }
             }
         )
@@ -2735,6 +2769,23 @@ def handle_message(event):
                             ]
                         }
                     ]
+                },
+                 "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#905c44",
+                            "margin": "xxl",
+                            "action": {
+                                "type": "message",
+                                "label": "地址前往",
+                                "text": "50嵐飲料店"
+                            }
+                        }
+                    ]
                 }
             }
         )
@@ -2911,6 +2962,23 @@ def handle_message(event):
                                     ]
                                 }
                             ]
+                        }
+                    ]
+                },
+                 "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#905c44",
+                            "margin": "xxl",
+                            "action": {
+                                "type": "message",
+                                "label": "地址前往",
+                                "text": "50嵐飲料店"
+                            }
                         }
                     ]
                 }
@@ -3111,6 +3179,23 @@ def handle_message(event):
                             ]
                         }
                     ]
+                },
+                 "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#905c44",
+                            "margin": "xxl",
+                            "action": {
+                                "type": "message",
+                                "label": "地址前往",
+                                "text": "50嵐飲料店"
+                            }
+                        }
+                    ]
                 }
             }
         )
@@ -3124,6 +3209,17 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="南部", text="南部CoCo飲料店"))                     
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('50嵐飲料店',message):
+        flex_message = TextSendMessage(text='東北西南部哪一區???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="北部", text="北部50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="西部", text="西部50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="東部", text="東部50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="南部", text="南部50嵐飲料店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+
+
 #北部CoCo飲料店------------------------------------------------------------
     elif re.match('北部CoCo飲料店',message):
         flex_message = TextSendMessage(text='哪一縣市???',
@@ -3168,8 +3264,59 @@ def handle_message(event):
                                 QuickReplyButton(action=PostbackAction(label="臺東縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!'))            
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
+
+#北部50嵐飲料店------------------------------------------------------------
+    elif re.match('北部50嵐飲料店',message):
+        flex_message = TextSendMessage(text='哪一縣市???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="臺北市", text="臺北市50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="新北市", text="新北市50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="基隆市", text="基隆市50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="新竹市", text="新竹市50嵐飲料店")),   
+                                QuickReplyButton(action=MessageAction(label="桃園市", text="桃園市50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="新竹縣", text="新竹縣50嵐飲料店")),
+                                QuickReplyButton(action=PostbackAction(label="宜蘭縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!'))                  
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+#西部50嵐飲料店------------------------------------------------------------
+    elif re.match('西部50嵐飲料店',message):
+        flex_message = TextSendMessage(text='哪一縣市???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="臺中市", text="臺中市50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="苗栗縣", text="苗栗縣50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="彰化縣", text="彰化縣50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="南投縣", text="南投縣50嵐飲料店")),   
+                                QuickReplyButton(action=MessageAction(label="雲林縣", text="雲林縣50嵐飲料店"))               
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+#南部50嵐飲料店------------------------------------------------------------
+    elif re.match('南部50嵐飲料店',message):
+        flex_message = TextSendMessage(text='哪一縣市???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="高雄市", text="高雄市50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="臺南市", text="臺南市50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="嘉義縣", text="嘉義縣50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="嘉義市", text="嘉義市50嵐飲料店")),   
+                                QuickReplyButton(action=MessageAction(label="屏東縣", text="屏東縣50嵐飲料店")),
+                                QuickReplyButton(action=MessageAction(label="澎湖縣", text="澎湖縣50嵐飲料店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+#東部50嵐飲料店------------------------------------------------------------
+    elif re.match('東部50嵐飲料店',message):
+        flex_message = TextSendMessage(text='哪一縣市???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=PostbackAction(label="花蓮縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!')),
+                                QuickReplyButton(action=MessageAction(label="臺東縣", text="臺東縣50嵐飲料店"))            
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+
+
+
+
+
+
 #台灣北部----------------------------------------------------
-    #臺北市CoCo飲料店
+#cooc   
     elif re.match('臺北市CoCo飲料店',message):
         flex_message = TextSendMessage(text='選擇店家???',
                             quick_reply=QuickReply(items=[
@@ -3179,8 +3326,7 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="安居店", text="安居店")),
                                 QuickReplyButton(action=MessageAction(label="延平店", text="延平店"))                     
                             ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
-    #新北市CoCo飲料店
+        line_bot_api.reply_message(event.reply_token, flex_message)    
     elif re.match('新北市CoCo飲料店',message):
         flex_message = TextSendMessage(text='選擇店家???',
                             quick_reply=QuickReply(items=[
@@ -3191,7 +3337,6 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="板橋民治店", text="板橋民治店"))                     
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
-    #基隆市CoCo飲料店
     elif re.match('基隆市CoCo飲料店',message):
         flex_message = TextSendMessage(text='選擇店家???',
                             quick_reply=QuickReply(items=[
@@ -3202,7 +3347,6 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="基隆成功店", text="基隆成功店"))                     
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
-    #新竹市CoCo飲料店
     elif re.match('新竹市CoCo飲料店',message):
         flex_message = TextSendMessage(text='選擇店家???',
                             quick_reply=QuickReply(items=[
@@ -3213,7 +3357,6 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="新竹巨城店", text="新竹巨城店"))                     
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
-    #桃園市CoCo飲料店
     elif re.match('桃園市CoCo飲料店',message):
         flex_message = TextSendMessage(text='選擇店家???',
                             quick_reply=QuickReply(items=[
@@ -3223,8 +3366,7 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="桃園縣府店", text="桃園縣府店")),
                                 QuickReplyButton(action=MessageAction(label="桃園莊敬店", text="桃園莊敬店"))                     
                             ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
-    #新竹縣CoCo飲料店
+        line_bot_api.reply_message(event.reply_token, flex_message)   
     elif re.match('新竹縣CoCo飲料店',message):
         flex_message = TextSendMessage(text='選擇店家???',
                             quick_reply=QuickReply(items=[
@@ -3235,7 +3377,6 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="新竹北埔店", text="新竹北埔店"))                     
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
-    #宜蘭縣CoCo飲料店
     elif re.match('宜蘭縣CoCo飲料店',message):
         flex_message = TextSendMessage(text='選擇店家???',
                             quick_reply=QuickReply(items=[
@@ -3246,7 +3387,65 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="羅東門市", text="羅東門市"))                     
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
+#50嵐
+    elif re.match('臺北市50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="開封店", text="開封店")),
+                                QuickReplyButton(action=MessageAction(label="重慶店", text="重慶店")),
+                                QuickReplyButton(action=MessageAction(label="信陽店", text="信陽店")),
+                                QuickReplyButton(action=MessageAction(label="北車店", text="北車店")),
+                                QuickReplyButton(action=MessageAction(label="伊通店", text="伊通店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)  
+    elif re.match('新北市50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="重新店", text="重新店")),
+                                QuickReplyButton(action=MessageAction(label="新泰店", text="新泰店")),
+                                QuickReplyButton(action=MessageAction(label="樂華店", text="樂華店")),
+                                QuickReplyButton(action=MessageAction(label="新莊中和店", text="新莊中和店")),
+                                QuickReplyButton(action=MessageAction(label="南勢角店", text="南勢角店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message) 
+    elif re.match('基隆市50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="基隆廟口店", text="基隆廟口店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('新竹市50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="新竹東門店", text="新竹東門店")),
+                                QuickReplyButton(action=MessageAction(label="新竹民生店", text="新竹民生店")),
+                                QuickReplyButton(action=MessageAction(label="新竹光復店", text="新竹光復店")),
+                                QuickReplyButton(action=MessageAction(label="新竹中山店", text="新竹中山店")),
+                                QuickReplyButton(action=MessageAction(label="新竹林森店", text="新竹林森店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message) 
+    elif re.match('桃園市50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="中正店", text="中正店")),
+                                QuickReplyButton(action=MessageAction(label="中山東店", text="中山東店")),
+                                QuickReplyButton(action=MessageAction(label="大興店", text="大興店")),
+                                QuickReplyButton(action=MessageAction(label="桃鶯店", text="桃鶯店")),
+                                QuickReplyButton(action=MessageAction(label="長庚店", text="長庚店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message) 
+    elif re.match('新竹縣50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="竹北正東店", text="竹北正東店")),
+                                QuickReplyButton(action=MessageAction(label="湖口新工店", text="湖口新工店")),
+                                QuickReplyButton(action=MessageAction(label="竹北正西", text="竹北正西")),
+                                QuickReplyButton(action=MessageAction(label="竹北博愛店", text="竹北博愛店")),
+                                QuickReplyButton(action=MessageAction(label="嘉豐南店", text="嘉豐南店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message) 
 #台灣西部----------------------------------------------------    
+#coco
     elif re.match('臺中市CoCo飲料店',message):
         flex_message = TextSendMessage(text='選擇店家??????',
                             quick_reply=QuickReply(items=[
@@ -3280,7 +3479,59 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="雲林西螺店", text="雲林西螺店"))             
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
+#50嵐
+    elif re.match('臺中市50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="英才店", text="英才店")),
+                                QuickReplyButton(action=MessageAction(label="公園店", text="公園店")),
+                                QuickReplyButton(action=MessageAction(label="繼光店", text="繼光店")),
+                                QuickReplyButton(action=MessageAction(label="美村一店", text="美村一店")),
+                                QuickReplyButton(action=MessageAction(label="學士店", text="學士店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message) 
+    elif re.match('苗栗縣50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="苗栗中正店", text="苗栗中正店")),
+                                QuickReplyButton(action=MessageAction(label="苗栗府前店", text="苗栗府前店")),
+                                QuickReplyButton(action=MessageAction(label="苗栗為公店", text="苗栗為公店")),
+                                QuickReplyButton(action=MessageAction(label="苗栗公館店", text="苗栗公館店")),
+                                QuickReplyButton(action=MessageAction(label="苑裡店", text="苑裡店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('彰化縣50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="彰化彰美店", text="彰化彰美店")),
+                                QuickReplyButton(action=MessageAction(label="秀水店", text="秀水店")),
+                                QuickReplyButton(action=MessageAction(label="彰化白沙店", text="彰化白沙店")),
+                                QuickReplyButton(action=MessageAction(label="彰化大竹店", text="彰化大竹店")),
+                                QuickReplyButton(action=MessageAction(label="彰化大村店", text="彰化大村店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('南投縣50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="草屯中正店", text="草屯中正店")),
+                                QuickReplyButton(action=MessageAction(label="南投民族店", text="南投民族店")),
+                                QuickReplyButton(action=MessageAction(label="南投民族二店", text="南投民族二店")),
+                                QuickReplyButton(action=MessageAction(label="南投名間店", text="南投名間店")),
+                                QuickReplyButton(action=MessageAction(label="南投集集店", text="南投集集店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('雲林縣50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="麥寮店", text="麥寮店")),
+                                QuickReplyButton(action=MessageAction(label="虎尾林森店", text="虎尾林森店")),
+                                QuickReplyButton(action=MessageAction(label="北港中山店", text="北港中山店")),
+                                QuickReplyButton(action=MessageAction(label="雲林土庫店", text="雲林土庫店")),
+                                QuickReplyButton(action=MessageAction(label="斗南中山店", text="斗南中山店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
 #台灣南部----------------------------------------------------
+#coco
     elif re.match('高雄市CoCo飲料店',message):
         flex_message = TextSendMessage(text='選擇店家??????',
                             quick_reply=QuickReply(items=[
@@ -3305,11 +3556,79 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="敲敲Knock knock", text="敲敲Knock knock"))          
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
+#50嵐
+    elif re.match('高雄市50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="自立七賢店", text="自立七賢店")),
+                                QuickReplyButton(action=MessageAction(label="重愛店", text="重愛店")),
+                                QuickReplyButton(action=MessageAction(label="河堤裕誠店", text="河堤裕誠店")),
+                                QuickReplyButton(action=MessageAction(label="大社二店", text="大社二店")),
+                                QuickReplyButton(action=MessageAction(label="大順店", text="大順店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('臺南市50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="赤崁店", text="赤崁店")),
+                                QuickReplyButton(action=MessageAction(label="青年店", text="青年店")),
+                                QuickReplyButton(action=MessageAction(label="公園店", text="公園店")),
+                                QuickReplyButton(action=MessageAction(label="民族店", text="民族店")),
+                                QuickReplyButton(action=MessageAction(label="南園店", text="南園店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('嘉義縣50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="嘉義太保店", text="嘉義太保店")),
+                                QuickReplyButton(action=MessageAction(label="太保中山店", text="太保中山店")),
+                                QuickReplyButton(action=MessageAction(label="嘉義水上店", text="嘉義水上店")),
+                                QuickReplyButton(action=MessageAction(label="嘉義頭橋店", text="嘉義頭橋店")),
+                                QuickReplyButton(action=MessageAction(label="嘉義民雄店", text="嘉義民雄店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('嘉義市50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="嘉義中山店", text="嘉義中山店")),
+                                QuickReplyButton(action=MessageAction(label="嘉義民族店", text="嘉義民族店")),
+                                QuickReplyButton(action=MessageAction(label="嘉義文化店", text="嘉義文化店")),
+                                QuickReplyButton(action=MessageAction(label="嘉義友愛店", text="嘉義友愛店")),
+                                QuickReplyButton(action=MessageAction(label="嘉義新生店", text="嘉義新生店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('屏東縣50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="屏東勝利店", text="屏東勝利店")),
+                                QuickReplyButton(action=MessageAction(label="屏東中正自由店", text="屏東中正自由店")),
+                                QuickReplyButton(action=MessageAction(label="屏東棒球路店", text="屏東棒球路店")),
+                                QuickReplyButton(action=MessageAction(label="屏大民生店", text="屏大民生店")),
+                                QuickReplyButton(action=MessageAction(label="屏東林森店", text="屏東林森店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('澎湖縣50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="澎湖馬公店", text="澎湖馬公店")),
+                                QuickReplyButton(action=MessageAction(label="澎湖中正店", text="澎湖中正店")),
+                                QuickReplyButton(action=MessageAction(label="澎湖光復店", text="澎湖光復店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
+    
 #台灣東部---------------------------------------------------------  
+#50
+    elif re.match('臺東縣50嵐飲料店',message):
+        flex_message = TextSendMessage(text='選擇店家???',
+                            quick_reply=QuickReply(items=[
+                                QuickReplyButton(action=MessageAction(label="台東中華店", text="台東中華店")),
+                                QuickReplyButton(action=MessageAction(label="台東東商店", text="台東東商店"))                     
+                            ]))
+        line_bot_api.reply_message(event.reply_token, flex_message)
 
-
-    #地圖座標位址---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#地圖座標位址---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     #北部---------------------------------
+    #coco
     elif re.match('台北建國店',message):
         location_message = LocationSendMessage(
             title = '台北建國店',
@@ -3590,7 +3909,217 @@ def handle_message(event):
             longitude=121.7638361027684
         )
         line_bot_api.reply_message(event.reply_token, location_message) 
+    #50
+    elif re.match('開封店',message):
+        location_message = LocationSendMessage(
+            title = '開封店',
+            address = '100台北市中正區開封街一段9號',
+            latitude =25.049850913457274,
+            longitude=121.5138821972089
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)    
+    elif re.match('重慶店',message):
+        location_message = LocationSendMessage(
+            title = '重慶店',
+            address = '103台北市大同區重慶北路一段84號',
+            latitude =25.0560713500303,
+            longitude=121.5138821972089
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('信陽店',message):
+        location_message = LocationSendMessage(
+            title = '信陽店',
+            address = '100台北市中正區信陽街13號',
+            latitude =25.048295754992203,
+            longitude=121.51594213364511
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('北車店',message):
+        location_message = LocationSendMessage(
+            title = '北車店',
+            address = 'B1, No. 49號 號忠孝西路一段中正區台北市100',
+            latitude =25.049850913457274,
+            longitude=121.51731542460259
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('伊通店',message):
+        location_message = LocationSendMessage(
+            title = '伊通店',
+            address = '10485台北市中山區伊通街66-2號',
+            latitude =25.05560482823755,
+            longitude=121.53413823883167
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('重新店',message):
+        location_message = LocationSendMessage(
+            title = '重新店',
+            address ='241新北市三重區重新路三段5號',
+            latitude =25.064643261335295,
+            longitude=121.49571371994826
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('新泰店',message):
+        location_message = LocationSendMessage(
+            title = '新泰店',
+            address ='242新北市新莊區新泰路311號',
+            latitude =25.043215019268168,
+            longitude=121.44453345173015
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('樂華店',message):
+        location_message = LocationSendMessage(
+            title = '樂華店',
+            address ='234新北市永和區永和路一段144號',
+            latitude =25.012288990977442,
+            longitude=121.51369581309984
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('新莊中和店',message):
+        location_message = LocationSendMessage(
+            title = '新莊中和店',
+            address ='242新北市新莊區中和街196號',
+            latitude =25.053360847604765,
+            longitude=121.44699865173013
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('南勢角店',message):
+        location_message = LocationSendMessage(
+            title = '南勢角店',
+            address ='235新北市中和區景新街396號',
+            latitude =24.99204213503707,
+            longitude=121.51233253583919
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('基隆廟口店',message):
+        location_message = LocationSendMessage(
+            title = '基隆廟口店',
+            address ='20048基隆市仁愛區愛四路1號',
+            latitude =25.12796578625099,
+            longitude=121.74316374108386
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('新竹東門店',message):
+        location_message = LocationSendMessage(
+            title = '新竹東門店',
+            address ='300新竹市東區東門街113號',
+            latitude =24.807312816093425,
+            longitude=120.96876953054579
+        )
+        line_bot_api.reply_message(event.reply_token, location_message) 
+    elif re.match('新竹民生店',message):
+        location_message = LocationSendMessage(
+            title = '新竹民生店',
+            address ='300新竹市東區民生路105號',
+            latitude =24.811831546714853,
+            longitude=120.9776959215945
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('新竹光復店',message):
+        location_message = LocationSendMessage(
+            title = '新竹光復店',
+            address ='300新竹市東區光復路一段183號',
+            latitude =24.785807634381218,
+            longitude=121.0218128927391
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('新竹中山店',message):
+        location_message = LocationSendMessage(
+            title = '新竹中山店',
+            address ='300新竹市北區中山路364號',
+            latitude =24.804040529014767,
+            longitude=120.95932815539811
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('新竹林森店',message):
+        location_message = LocationSendMessage(
+            title = '新竹林森店',
+            address ='300新竹市東區林森路140號',
+            latitude =24.80248226671437,
+            longitude=120.96430633502142
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('中正店',message):
+        location_message = LocationSendMessage(
+            title = '中正店',
+            address ='330桃園市桃園區中正路542號',
+            latitude =25.01615383321403,
+            longitude=121.30035299928778
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('中山東店',message):
+        location_message = LocationSendMessage(
+            title = '中山東店',
+            address ='330桃園市桃園區中山東路40號',
+            latitude =25.00930910894386,
+            longitude=121.32026571778106
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('大興店',message):
+        location_message = LocationSendMessage(
+            title = '大興店',
+            address ='330桃園市桃園區大興路146號',
+            latitude =25.029219974504407,
+            longitude=121.30927939033648
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('桃鶯店',message):
+        location_message = LocationSendMessage(
+            title = '桃鶯店',
+            address ='330桃園市桃園區桃鶯路97號',
+            latitude =24.997485504905832,
+            longitude=121.31957907231578
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('長庚店',message):
+        location_message = LocationSendMessage(
+            title = '長庚店',
+            address ='333桃園市龜山區復興一路282號',
+            latitude =25.067166112518443,
+            longitude=121.36352438209406
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('竹北正東店',message):
+        location_message = LocationSendMessage(
+            title = '竹北正東店',
+            address ='302新竹縣竹北市中正東路262號',
+            latitude =24.848396325898307,
+            longitude=121.013561629135
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('湖口新工店',message):
+        location_message = LocationSendMessage(
+            title = '湖口新工店',
+            address ='303新竹縣湖口鄉仁和路129號',
+            latitude =24.88702111719869,
+            longitude=121.01424827460029
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('竹北正西',message):
+        location_message = LocationSendMessage(
+            title = '竹北正西',
+            address ='302新竹縣竹北市中正西路124號',
+            latitude =24.852757793718148,
+            longitude=121.00463523808628
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('竹北博愛店',message):
+        location_message = LocationSendMessage(
+            title = '竹北博愛店',
+            address ='302新竹縣竹北市博愛街224號',
+            latitude =24.84777324651518,
+            longitude=121.008755110878
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉豐南店',message):
+        location_message = LocationSendMessage(
+            title = '嘉豐南店',
+            address ='302新竹縣竹北市嘉豐南路二段30號',
+            latitude =24.82097786548697,
+            longitude=121.02798118390601
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
     #西部---------------------------------
+    #coco
     elif re.match('台中靜宜店',message):
         location_message = LocationSendMessage(
             title = '台中靜宜店',
@@ -3695,7 +4224,209 @@ def handle_message(event):
             longitude=120.47211353598186
         )
         line_bot_api.reply_message(event.reply_token, location_message)
+    #50
+    elif re.match('英才店',message):
+        location_message = LocationSendMessage(
+            title = '英才店',
+            address ='404台中市北區英才路304號',
+            latitude =24.158541767880966,
+            longitude=120.67128405531601
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('公園店',message):
+        location_message = LocationSendMessage(
+            title = '公園店',
+            address ='400台中市中區公園路28號',
+            latitude =24.148987183851357,
+            longitude=120.68072543046372
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('繼光店',message):
+        location_message = LocationSendMessage(
+            title = '繼光店',
+            address ='403台中市西區民權路59號',
+            latitude =24.140685079999077,
+            longitude=120.68124041456268
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('美村一店',message):
+        location_message = LocationSendMessage(
+            title = '美村一店',
+            address ='403台中市西區美村路一段141號',
+            latitude =24.153059716873216,
+            longitude=120.66201434153469
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('學士店',message):
+        location_message = LocationSendMessage(
+            title = '學士店',
+            address ='404台中市北區學士路45號',
+            latitude =24.15807188701251,
+            longitude=120.68192706002797
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('苗栗中正店',message):
+        location_message = LocationSendMessage(
+            title = '苗栗中正店',
+            address ='360苗栗縣苗栗市中正路1077號',
+            latitude =24.555201778048716,
+            longitude=120.81603326910223
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('苗栗府前店',message):
+        location_message = LocationSendMessage(
+            title = '苗栗府前店',
+            address ='360苗栗縣苗栗市府前路86-2號',
+            latitude =24.56862880184728,
+            longitude=120.81912317369604
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('苗栗為公店',message):
+        location_message = LocationSendMessage(
+            title = '苗栗為公店',
+            address ='360苗栗縣苗栗市為公路156號',
+            latitude =24.57862007213335,
+            longitude=120.82907953294269
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('苗栗公館店',message):
+        location_message = LocationSendMessage(
+            title = '苗栗公館店',
+            address ='363苗栗縣公館鄉大同路231-5號',
+            latitude =24.511163546278222,
+            longitude=120.82942285567533
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('苑裡店',message):
+        location_message = LocationSendMessage(
+            title = '苑裡店',
+            address ='358苗栗縣苑裡鎮為公路85號',
+            latitude =24.449046540874303,
+            longitude=120.65302416003281
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('彰化彰美店',message):
+        location_message = LocationSendMessage(
+            title = '彰化彰美店',
+            address ='500彰化縣彰化市彰美路一段199號',
+            latitude =24.095384191847323,
+            longitude=120.5366382785069
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('秀水店',message):
+        location_message = LocationSendMessage(
+            title = '秀水店',
+            address ='504彰化縣秀水鄉彰水路二段549號',
+            latitude =24.036136388987593,
+            longitude=120.49612619605503
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('彰化白沙店',message):
+        location_message = LocationSendMessage(
+            title = '彰化白沙店',
+            address ='503彰化縣花壇鄉彰員路三段178號',
+            latitude =24.05494817932854,
+            longitude=120.54659463775356
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('彰化大竹店',message):
+        location_message = LocationSendMessage(
+            title = '彰化大竹店',
+            address ='500彰化縣彰化市彰南路二段89號',
+            latitude =24.09256348852466,
+            longitude=120.57921029735462
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('彰化大村店',message):
+        location_message = LocationSendMessage(
+            title = '彰化大村店',
+            address ='515彰化縣大村鄉中山路二段298號',
+            latitude =23.996936312481946,
+            longitude=120.56273080618774
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('草屯中正店',message):
+        location_message = LocationSendMessage(
+            title = '草屯中正店',
+            address ='542南投縣草屯鎮中正路769號',
+            latitude =23.988521300838148,
+            longitude=120.6848686145675
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('南投民族店',message):
+        location_message = LocationSendMessage(
+            title = '南投民族店',
+            address ='540南投縣南投市民族路307號',
+            latitude =23.91384647638434,
+            longitude=120.68383864636957
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('南投民族二店',message):
+        location_message = LocationSendMessage(
+            title = '南投民族二店',
+            address ='540南投縣南投市民族路41號',
+            latitude =23.919181825671913,
+            longitude=120.69242171468565
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('南投名間店',message):
+        location_message = LocationSendMessage(
+            title = '南投名間店',
+            address ='551南投縣名間鄉南雅街145號',
+            latitude =23.846071078134823,
+            longitude=120.70155966910222
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('南投集集店',message):
+        location_message = LocationSendMessage(
+            title = '南投集集店',
+            address ='552南投縣集集鎮民生路111號',
+            latitude =23.832813831541426,
+            longitude=120.78534038276547
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('麥寮店',message):
+        location_message = LocationSendMessage(
+            title = '麥寮店',
+            address ='638雲林縣麥寮鄉光復路57號',
+            latitude =23.776093251838287,
+            longitude=120.25903094920065
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('虎尾林森店',message):
+        location_message = LocationSendMessage(
+            title = '虎尾林森店',
+            address ='632雲林縣虎尾鎮林森路一段398號',
+            latitude =23.738385679416616,
+            longitude=120.4293190245915
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('北港中山店',message):
+        location_message = LocationSendMessage(
+            title = '北港中山店',
+            address ='651雲林縣北港鎮中山路86號',
+            latitude =23.58241204749373,
+            longitude=120.30022967711778
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('雲林土庫店',message):
+        location_message = LocationSendMessage(
+            title = '雲林土庫店',
+            address ='633雲林縣土庫鎮建國路121號',
+            latitude =23.710726520837618,
+            longitude=120.39086687853553
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('斗南中山店',message):
+        location_message = LocationSendMessage(
+            title = '斗南中山店',
+            address ='630雲林縣斗南鎮中山路71號',
+            latitude =23.703182095760308,
+            longitude=120.48287737088381
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
     #南部---------------------------------
+    #coco
     elif re.match('夢時代店',message):
         location_message = LocationSendMessage(
             title = '夢時代店',
@@ -3766,6 +4497,249 @@ def handle_message(event):
             address = '880澎湖縣馬公市光復路181之1號',
             latitude =23.57411348393427,
             longitude=119.57225065423698
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    #50
+    elif re.match('自立七賢店',message):
+        location_message = LocationSendMessage( 
+            title = '自立七賢店',
+            address = '801高雄市前金區自立一路43號',
+            latitude =22.64156596078769,
+            longitude=120.29585876040518
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('重愛店',message):
+        location_message = LocationSendMessage( 
+            title = '重愛店',
+            address = '813高雄市左營區重愛路59號',
+            latitude =22.690987731785974,
+            longitude=120.31989135169019
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('河堤裕誠店',message):
+        location_message = LocationSendMessage( 
+            title = '河堤裕誠店',
+            address = '813高雄市左營區裕誠路175號',
+            latitude =22.670714287219063,
+            longitude=120.31233825157206
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('大社二店',message):
+        location_message = LocationSendMessage( 
+            title = '大社二店',
+            address = '815高雄市大社區中山路240號',
+            latitude =22.740391684630353,
+            longitude=120.34735717030163
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('大順店',message):
+        location_message = LocationSendMessage( 
+            title = '大順店',
+            address = '802高雄市苓雅區大順三路199號',
+            latitude =22.641249097153246,
+            longitude=120.32847442000624
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('赤崁店',message):
+        location_message = LocationSendMessage( 
+            title = '赤崁店',
+            address = '700台南市中西區民族路二段260號',
+            latitude =23.005264140228945,
+            longitude=120.20000751037608
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('青年店',message):
+        location_message = LocationSendMessage( 
+            title = '青年店',
+            address = '700台南市中西區青年路136號',
+            latitude =22.999891728507304,
+            longitude=120.21065051508805
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('公園店',message):
+        location_message = LocationSendMessage( 
+            title = '公園店',
+            address = '704台南市北區公園路790號',
+            latitude =23.017904265254828,
+            longitude=120.21305377421653
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('民族店',message):
+        location_message = LocationSendMessage( 
+            title = '民族店',
+            address = '700台南市中西區民族路二段139號',
+            latitude =23.003368019335234,
+            longitude=120.20687396502895
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('南園店',message):
+        location_message = LocationSendMessage( 
+            title = '南園店',
+            address = '704台南市北區南園街118號',
+            latitude =23.01537633500083,
+            longitude=120.22575671532432
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉義太保店',message):
+        location_message = LocationSendMessage( 
+            title = '嘉義太保店',
+            address = '612嘉義縣太保市祥和三路東段19號',
+            latitude =23.460840116071612,
+            longitude=120.29197260090432
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('太保中山店',message):
+        location_message = LocationSendMessage( 
+            title = '太保中山店',
+            address = '612嘉義縣太保市中山路二段5-1號',
+            latitude =23.50744316285785,
+            longitude=120.37608667040183
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉義水上店',message):
+        location_message = LocationSendMessage( 
+            title = '嘉義水上店',
+            address = '608嘉義縣水上鄉中興路300號',
+            latitude =23.43670162281299,
+            longitude=120.40191976910224
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉義頭橋店',message):
+        location_message = LocationSendMessage( 
+            title = '嘉義頭橋店',
+            address = '621嘉義縣民雄鄉建國路三段144號',
+            latitude =23.53053784777387,
+            longitude=120.43693868783183
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉義民雄店',message):
+        location_message = LocationSendMessage( 
+            title = '嘉義民雄店',
+            address = '621嘉義縣民雄鄉東榮路15號',
+            latitude =23.563619658366584,
+            longitude=120.43440530549807
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉義中山店',message):
+        location_message = LocationSendMessage( 
+            title = '嘉義中山店',
+            address = '600嘉義市東區中山路57號',
+            latitude =23.48404575537445,
+            longitude=120.4586958791027
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉義民族店',message):
+        location_message = LocationSendMessage( 
+            title = '嘉義民族店',
+            address = '600嘉義市西區民族路716號',
+            latitude =23.476960636993113,
+            longitude=120.44307469476747
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉義文化店',message):
+        location_message = LocationSendMessage( 
+            title = '嘉義文化店',
+            address = '600嘉義市東區文化路190號',
+            latitude =23.482786206590745,
+            longitude=120.44951199600453
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉義友愛店',message):
+        location_message = LocationSendMessage( 
+            title = '嘉義友愛店',
+            address = '600嘉義市西區友愛路202號',
+            latitude =23.48317981687793,
+            longitude=120.43431996508505
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('嘉義新生店',message):
+        location_message = LocationSendMessage( 
+            title = '嘉義新生店',
+            address = '600嘉義市東區新生路752號',
+            latitude =23.496719295346033,
+            longitude=120.45603512792475
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('屏東勝利店',message):
+        location_message = LocationSendMessage( 
+            title = '屏東勝利店',
+            address = '900屏東縣屏東市勝利路205號',
+            latitude =22.68241273511173,
+            longitude=120.47928179568784
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('屏東中正自由店',message):
+        location_message = LocationSendMessage( 
+            title = '屏東中正自由店',
+            address = '900屏東縣屏東市中正路348號',
+            latitude =22.686530669803894,
+            longitude=120.49095476859766
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('屏東棒球路店',message):
+        location_message = LocationSendMessage( 
+            title = '屏東棒球路店',
+            address = '900屏東縣屏東市棒球路228號',
+            latitude =22.66023711472268,
+            longitude=120.48031176388574
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('屏大民生店',message):
+        location_message = LocationSendMessage( 
+            title = '屏大民生店',
+            address = '900屏東縣屏東市民生路39號',
+            latitude =22.666256566162176,
+            longitude=120.50726259839823
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('屏東林森店',message):
+        location_message = LocationSendMessage( 
+            title = '屏東林森店',
+            address = '900屏東縣屏東市林森路109號',
+            latitude =22.676552384010964,
+            longitude=120.4918130754293
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('澎湖馬公店',message):
+        location_message = LocationSendMessage( 
+            title = '澎湖馬公店',
+            address = '880澎湖縣馬公市海埔路30號',
+            latitude =23.57032943932773,
+            longitude=119.5694561186501
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('澎湖中正店',message):
+        location_message = LocationSendMessage( 
+            title = '澎湖中正店',
+            address = '880澎湖縣馬公市中正路28號',
+            latitude =23.56844134992375,
+            longitude=119.56550790722468
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('澎湖光復店',message):
+        location_message = LocationSendMessage( 
+            title = '澎湖光復店',
+            address = '880澎湖縣馬公市光復路125-2號',
+            latitude =23.57536421169638,
+            longitude=119.57117273231329
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    #東部---------------------------------
+    #50
+    elif re.match('台東中華店',message):
+        location_message = LocationSendMessage( 
+            title = '台東中華店',
+            address = '950台東縣台東市中華路一段625號',
+            latitude =22.75000435736271,
+            longitude=121.14858745834839
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    elif re.match('台東東商店',message):
+        location_message = LocationSendMessage( 
+            title = '台東東商店',
+            address = '950台東縣台東市正氣路467號',
+            latitude =22.75766220905468,
+            longitude=121.14470361993536
         )
         line_bot_api.reply_message(event.reply_token, location_message)
     else:
