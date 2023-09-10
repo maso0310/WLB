@@ -171,7 +171,7 @@ def handle_message(event):
                         actions=[
                             URIAction(
                                 label='馬上查看',
-                                uri='https://eportal.stust.edu.tw/MenuTop.aspx'
+                                uri='https://portal.stust.edu.tw/osa/login.aspx'
                             )
                         ]
                     ),
@@ -182,7 +182,7 @@ def handle_message(event):
                         actions=[
                             URIAction(
                                 label='馬上查看',
-                                uri='https://eportal.stust.edu.tw/'
+                                uri='https://aura.stust.edu.tw/activity/reg_reduce.aspx'
                             )
                         ]
                     ),
@@ -248,7 +248,7 @@ def handle_message(event):
                         actions=[
                             URIAction(
                                 label='馬上查看',
-                                uri='https://eportal.stust.edu.tw/'
+                                uri='https://portal.stust.edu.tw/studclub/Pages/stud/acti_studactilist.aspx'
                             )
                         ]
                     )
