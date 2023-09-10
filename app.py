@@ -156,7 +156,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='南台最新消息',
-                        text='',
+                        text=' ',
                         actions=[
                             URIAction(
                                 label='馬上查看',
@@ -167,7 +167,7 @@ def handle_message(event):
                    CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='學生輔導問卷',
-                        text='',
+                        text=' ',
                         actions=[
                             URIAction(
                                 label='馬上查看',
@@ -178,7 +178,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='學雜費減免',
-                        text='',
+                        text=' ',
                         actions=[
                             URIAction(
                                 label='馬上查看',
@@ -189,7 +189,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='FlipClass數位學習',
-                        text='',
+                        text=' ',
                         actions=[
                             URIAction(
                                 label='馬上查看',
@@ -200,7 +200,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='課程時序',
-                        text='',
+                        text=' ',
                         actions=[
                             URIAction(
                                 label='馬上查看',
@@ -211,7 +211,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='行事曆',
-                        text='',
+                        text=' ',
                         actions=[
                             URIAction(
                                 label='馬上查看',
@@ -222,7 +222,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='學費入口網',
-                        text='',
+                        text=' ',
                         actions=[
                             URIAction(
                                 label='馬上查看',
@@ -233,7 +233,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='選課系統',
-                        text='',
+                        text=' ',
                         actions=[
                             URIAction(
                                 label='馬上查看',
@@ -244,7 +244,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='社團活動列表',
-                        text='',
+                        text=' ',
                         actions=[
                             URIAction(
                                 label='馬上查看',
