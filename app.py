@@ -7,7 +7,10 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
-
+#======這裡是呼叫的檔案內容=====
+from ytmovie import *
+from stust import *
+from other import *
 #======python的函數庫==========
 import re
 import tempfile, os
@@ -42,6 +45,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
+    stw = event.message.text
     #文字表達
     if re.match('呼叫機器人',message):
         flex_message = TextSendMessage(text='需要什麼幫忙嗎???',
@@ -52,264 +56,19 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="想喝手搖杯", text="想喝手搖杯"))
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
-        #line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))   
-    elif re.match('查看影片',message):
-        #多樣版組合按鈕
-       carousel_template_message = TemplateSendMessage(
-            alt_text='免費教學影片',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        #thumbnailImageUrl:縮圖連結，支援 jpg 和 png，最大寬度 1024px。
-                        thumbnail_image_url='https://shoplineimg.com/541acb0db32b41988d00001c/541e8aa3f577fe121e000049/800x.png?',
-                        #title:樣板標題。
-                        title='微積分教學youtube頻道',
-                        #樣板說明文字。
-                        text='有關微積分教學影片',
-                        #actions:點擊按鈕觸發的行為，一個按鈕一種行為，最多支援四個按鈕。
-                        actions=[
-                            PostbackAction(
-                                label='詳細內容',
-                                display_text='微積分學在科學、商學和工程學領域有廣泛的應用，並成為了現代大學教育的重要組成部分，用來解決那些僅依靠代數學和幾何學不能有效解決的問題。',
-                                data='action=其實不需要謝謝!'
-                            ),
-                            URIAction(
-                                label='觀看請點這',
-                                uri='https://www.youtube.com/@CUSTCourses/playlists?view=50&sort=dd&shelf_id=18'
-                            )
-                        ]
-                    ),
-                   CarouselColumn(
-                        thumbnail_image_url='https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/69/79/72/697972be-cf1b-557a-dcab-64cd665766b3/mza_14417997536117382377.jpeg/1200x600wp.png',
-                        title='AmazingTalker Show',
-                        text='娛樂節目',
-                        actions=[
-                            PostbackAction(
-                                label='詳細內容',
-                                display_text='學習如何與人互動、交流，還可以學到各種語言',
-                                data='action=其實不需要謝謝!'
-                            ),
-                            URIAction(
-                                label='觀看請點這',
-                                uri='https://www.youtube.com/@amazingtalkershow/videos'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/zh/thumb/4/48/ETTV_Crucial_Moment.jpg/250px-ETTV_Crucial_Moment.jpg',
-                        title='關鍵時刻',
-                        text='新聞節目',
-                        actions=[
-                            PostbackAction(
-                                label='詳細內容',
-                                display_text='探討國際社會相關問題',
-                                data='action=其實不需要謝謝!'
-                            ),
-                            URIAction(
-                                label='觀看請點這',
-                                uri='https://www.youtube.com/@ebcCTime/videos'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://yt3.googleusercontent.com/ytc/AOPolaTri_-obIKaqk2CJapBWOrvUYaFr-VY1NTQR7dPJQ=s900-c-k-c0x00ffffff-no-rj',
-                        title='Eko Languages',
-                        text='學習各國語言',
-                        actions=[
-                            PostbackAction(
-                                label='詳細內容',
-                                display_text='如果您想要學習更多的語言，非常推薦你來觀看',
-                                data='action=其實不需要謝謝!'
-                            ),
-                            URIAction(
-                                label='觀看請點這',
-                                uri='https://www.youtube.com/@EkoLanguages/videos'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://yt3.googleusercontent.com/VnKzy6UKvr4EJppQhjxfAtUWD4vibPBYZEU2jziPFrG_0V8XqZTO9TT6b32Fp0GzOoJYucD4OtA=s900-c-k-c0x00ffffff-no-rj',
-                        title='英语兔',
-                        text='學習英語',
-                        actions=[
-                            PostbackAction(
-                                label='詳細內容',
-                                display_text='想增進自己的英文能力也許這部視頻會對您有所幫助',
-                                data='action=其實不需要謝謝!'
-                            ),
-                            URIAction(
-                                label='觀看請點這',
-                                uri='https://www.youtube.com/@yingyutu/videos'
-                            )
-                        ]
-                    )
-
-                ]
-            )
-        )
-       line_bot_api.reply_message(event.reply_token,carousel_template_message)
-    if re.match('南台科技大學',message):
-        carousel_template_message = TemplateSendMessage(
-            alt_text='免費教學影片',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
-                        title='南台最新消息',
-                        text=' ',
-                        actions=[
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://news.stust.edu.tw/User/RwdNewsList.aspx'
-                            )
-                        ]
-                    ),
-                   CarouselColumn(
-                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
-                        title='學生輔導問卷',
-                        text=' ',
-                        actions=[
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://portal.stust.edu.tw/osa/login.aspx'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
-                        title='學雜費減免',
-                        text=' ',
-                        actions=[
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://aura.stust.edu.tw/activity/reg_reduce.aspx'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
-                        title='FlipClass數位學習',
-                        text=' ',
-                        actions=[
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://flipclass.stust.edu.tw/'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
-                        title='課程時序',
-                        text=' ',
-                        actions=[
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://academic.stust.edu.tw/tc/node/course1'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
-                        title='行事曆',
-                        text=' ',
-                        actions=[
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://academic.stust.edu.tw/tc/node/calendar'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
-                        title='學費入口網',
-                        text=' ',
-                        actions=[
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://ebill.chb.com.tw/eBill/cs/student_login'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
-                        title='選課系統',
-                        text=' ',
-                        actions=[
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://course.stust.edu.tw/CourSel/board.aspx'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
-                        title='社團活動列表',
-                        text=' ',
-                        actions=[
-                            URIAction(
-                                label='馬上查看',
-                                uri='https://portal.stust.edu.tw/studclub/Pages/stud/acti_studactilist.aspx'
-                            )
-                        ]
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token,   carousel_template_message )
-
-   
-    elif re.match('其他選項',message):
-         #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
-            carousel_template_message2 = ImagemapSendMessage(
-                base_url ="https://i.imgur.com/eOpIya3.jpg",
-                alt_text='需要什麼服務嗎?',
-                base_size=BaseSize(height=1330, width=2000),
-                actions=[
-                    URIImagemapAction(
-                        #bmi
-                        link_uri="https://depart.femh.org.tw/dietary/3OPD/BMI.htm",
-                        area=ImagemapArea(
-                            x=0, y=0, width=667, height=665
-                        )
-                    ),
-                    URIImagemapAction(
-                        #天氣預報
-                        link_uri="https://www.cwb.gov.tw/V8/C/W/week.html",
-                        area=ImagemapArea(
-                            x=667, y=0, width=666, height=665
-                        )
-                    ),
-                    URIImagemapAction(
-                        #飲食熱量
-                        link_uri="http://211.21.168.52/FOOD/%A5D%AD%B9%C3%FE.htm",
-                        area=ImagemapArea(
-                            x=1333, y=0, width=667, height=665
-                        )
-                    ),
-                    URIImagemapAction(
-                        #南台選課
-                        link_uri="https://course.stust.edu.tw/CourSel/Pages/QueryAndSelect.aspx",
-                        area=ImagemapArea(
-                            x=0, y=665, width=667, height=665
-                        )
-                    ),
-                    URIImagemapAction(
-                        #杜芳子菜單
-                        link_uri="https://www.popdaily.com.tw/forum/food/1190866",
-                        area=ImagemapArea(
-                            x=667, y=665, width=666, height=665
-                        )
-                    ),
-                    MessageImagemapAction(
-                        #youtube影片
-                        text='查看影片',
-                        area=ImagemapArea(
-                            x=1333, y=665, width=667, height=665
-                        )
-                    )
-                ]
-            )
-            line_bot_api.reply_message(event.reply_token, carousel_template_message2)
+        #line_bot_api.reply_message(event.reply_token,TextSendMessage('error')) 
+    #  
+    elif re.match('查看影片',stw):
+        message = ytm()
+        line_bot_api.reply_message(event.reply_token,message)
+    #
+    elif re.match('南台科技大學',stw):
+        message = sts()
+        line_bot_api.reply_message(event.reply_token,message)
+    #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)    
+    elif re.match('其他選項',stw):
+        message = oth()    
+        line_bot_api.reply_message(event.reply_token,message)
     #大圖按鈕
     elif re.match('想喝手搖杯',message):
         image_carousel_template_message = TemplateSendMessage(
@@ -334,7 +93,7 @@ def handle_message(event):
             )
         )
         line_bot_api.reply_message(event.reply_token, image_carousel_template_message)
-     #選擇按鈕
+    #選擇按鈕
     elif re.match('CoCo菜單',message):
         flex_message = TextSendMessage(text='想要系列???',
                             quick_reply=QuickReply(items=[
@@ -358,7 +117,7 @@ def handle_message(event):
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
    
-   
+    #coco菜單系列
     elif re.match('經典好茶道',message):
         flex_message = FlexSendMessage(
             alt_text='行銷',
@@ -1888,6 +1647,7 @@ def handle_message(event):
             }
         )
         line_bot_api.reply_message(event.reply_token, flex_message) 
+    #50嵐菜單系列
     elif re.match('找好茶',message):
         flex_message = FlexSendMessage(
             alt_text='行銷',
@@ -3758,7 +3518,6 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="澎湖光復店", text="澎湖光復店"))                     
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
-    
 #台灣東部---------------------------------------------------------  
 #50
     elif re.match('臺東縣50嵐飲料店',message):
@@ -3770,8 +3529,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 #地圖座標位址---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    #北部---------------------------------
-    #coco
+#北部---------------------------------
+#coco
     elif re.match('台北建國店',message):
         location_message = LocationSendMessage(
             title = '台北建國店',
@@ -4052,7 +3811,7 @@ def handle_message(event):
             longitude=121.7638361027684
         )
         line_bot_api.reply_message(event.reply_token, location_message) 
-    #50
+#50嵐
     elif re.match('開封店',message):
         location_message = LocationSendMessage(
             title = '開封店',
@@ -4261,8 +4020,8 @@ def handle_message(event):
             longitude=121.02798118390601
         )
         line_bot_api.reply_message(event.reply_token, location_message)
-    #西部---------------------------------
-    #coco
+#西部---------------------------------
+#coco
     elif re.match('台中靜宜店',message):
         location_message = LocationSendMessage(
             title = '台中靜宜店',
@@ -4367,7 +4126,7 @@ def handle_message(event):
             longitude=120.47211353598186
         )
         line_bot_api.reply_message(event.reply_token, location_message)
-    #50
+#50
     elif re.match('英才店',message):
         location_message = LocationSendMessage(
             title = '英才店',
@@ -4568,8 +4327,8 @@ def handle_message(event):
             longitude=120.48287737088381
         )
         line_bot_api.reply_message(event.reply_token, location_message)
-    #南部---------------------------------
-    #coco
+#南部---------------------------------
+#coco
     elif re.match('夢時代店',message):
         location_message = LocationSendMessage(
             title = '夢時代店',
@@ -4642,7 +4401,7 @@ def handle_message(event):
             longitude=119.57225065423698
         )
         line_bot_api.reply_message(event.reply_token, location_message)
-    #50
+#50
     elif re.match('自立七賢店',message):
         location_message = LocationSendMessage( 
             title = '自立七賢店',
@@ -4867,8 +4626,8 @@ def handle_message(event):
             longitude=119.57117273231329
         )
         line_bot_api.reply_message(event.reply_token, location_message)
-    #東部---------------------------------
-    #50
+#東部---------------------------------
+#50
     elif re.match('台東中華店',message):
         location_message = LocationSendMessage( 
             title = '台東中華店',
