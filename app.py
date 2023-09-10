@@ -47,6 +47,7 @@ def handle_message(event):
         flex_message = TextSendMessage(text='需要什麼幫忙嗎???',
                             quick_reply=QuickReply(items=[
                                 QuickReplyButton(action=MessageAction(label="查看影片", text="查看影片")),
+                                QuickReplyButton(action=MessageAction(label="南台科技大學", text="南台科技大學")),
                                 QuickReplyButton(action=MessageAction(label="其他選項", text="其他選項")),
                                 QuickReplyButton(action=MessageAction(label="想喝手搖杯", text="想喝手搖杯"))
                             ]))
