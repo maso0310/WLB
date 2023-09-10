@@ -109,12 +109,145 @@ def handle_message(event):
                                 uri='https://www.youtube.com/@ebcCTime/videos'
                             )
                         ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://yt3.googleusercontent.com/ytc/AOPolaTri_-obIKaqk2CJapBWOrvUYaFr-VY1NTQR7dPJQ=s900-c-k-c0x00ffffff-no-rj',
+                        title='Eko Languages',
+                        text='學習各國語言',
+                        actions=[
+                            PostbackAction(
+                                label='詳細內容',
+                                display_text='如果您想要學習更多的語言，非常推薦你來觀看',
+                                data='action=其實不需要謝謝!'
+                            ),
+                            URIAction(
+                                label='觀看請點這',
+                                uri='https://www.youtube.com/@EkoLanguages/videos'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://yt3.googleusercontent.com/VnKzy6UKvr4EJppQhjxfAtUWD4vibPBYZEU2jziPFrG_0V8XqZTO9TT6b32Fp0GzOoJYucD4OtA=s900-c-k-c0x00ffffff-no-rj',
+                        title='英语兔',
+                        text='學習英語',
+                        actions=[
+                            PostbackAction(
+                                label='詳細內容',
+                                display_text='想增進自己的英文能力也許這部視頻會對您有所幫助',
+                                data='action=其實不需要謝謝!'
+                            ),
+                            URIAction(
+                                label='觀看請點這',
+                                uri='https://www.youtube.com/@yingyutu/videos'
+                            )
+                        ]
                     )
 
                 ]
             )
         )
        line_bot_api.reply_message(event.reply_token,carousel_template_message)
+    if re.match('南台科技大學',message):
+        carousel_template_message = TemplateSendMessage(
+            alt_text='免費教學影片',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
+                        title='南台最新消息',
+                        actions=[
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://news.stust.edu.tw/User/RwdNewsList.aspx'
+                            )
+                        ]
+                    ),
+                   CarouselColumn(
+                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
+                        title='學生輔導問卷',
+                        actions=[
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://eportal.stust.edu.tw/MenuTop.aspx'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
+                        title='學雜費減免',
+                        actions=[
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://eportal.stust.edu.tw/'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
+                        title='FlipClass數位學習',
+                        actions=[
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://flipclass.stust.edu.tw/'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
+                        title='課程時序',
+                        actions=[
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://academic.stust.edu.tw/tc/node/course1'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
+                        title='行事曆',
+                        actions=[
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://academic.stust.edu.tw/tc/node/calendar'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
+                        title='學費入口網',
+                        actions=[
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://ebill.chb.com.tw/eBill/cs/student_login'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
+                        title='選課系統',
+                        actions=[
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://course.stust.edu.tw/CourSel/board.aspx'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
+                        title='社團活動列表',
+                        actions=[
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://eportal.stust.edu.tw/'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token,   carousel_template_message )
+
+   
     elif re.match('其他選項',message):
          #大圖片(內容包含:颱風情報、南台選課、 BMI值計算、食物熱量查詢)
             carousel_template_message2 = ImagemapSendMessage(
