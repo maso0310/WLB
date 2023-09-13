@@ -97,11 +97,11 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, image_carousel_template_message)
     #coco菜單系列
-    elif re.match('CoCo菜單',message):
+    elif re.match('CoCo菜單',stw):
         message = Co()
         line_bot_api.reply_message(event.reply_token,message)
     #50嵐菜單系列
-    elif re.match('50嵐菜單',message):
+    elif re.match('50嵐菜單',stw):
         message = fif()
         line_bot_api.reply_message(event.reply_token,message) 
    
