@@ -90,18 +90,7 @@ def ytm():
                             uri='https://www.youtube.com/@yingyutu/videos'
                         )
                     ]
-                ),
-                CarouselColumn(
-                    thumbnail_image_url='https://yt3.googleusercontent.com/VnKzy6UKvr4EJppQhjxfAtUWD4vibPBYZEU2jziPFrG_0V8XqZTO9TT6b32Fp0GzOoJYucD4OtA=s900-c-k-c0x00ffffff-no-rj',
-                    title='返回選項',
-                    text='其他',
-                    actions=[
-                        MessageAction(
-                            label='返回選項',
-                            text='返回選項'
-                        )
-                    ]
-                )
+                ) 
             ]
         )
     )

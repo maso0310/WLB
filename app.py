@@ -21,6 +21,7 @@ from fincity import *
 from fiwcity import *
 from fiscity import *
 from fiecity import *
+from rech import *
 #======python的函數庫==========
 import re
 import tempfile, os
@@ -111,6 +112,11 @@ def handle_message(event):
     elif re.match('50嵐菜單',stw):
         message = fif()
         line_bot_api.reply_message(event.reply_token,message) 
+    #返回選項
+    elif re.match('返回選項',stw):
+        message = rec()
+        line_bot_api.reply_message(event.reply_token,message) 
+        
    
      
   
