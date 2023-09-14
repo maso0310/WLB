@@ -4,7 +4,7 @@ from linebot.models import *
 
 def fif():
     message = FlexSendMessage(
-        alt_text='行銷',
+        alt_text='50嵐菜單',
         contents=
         {
             "type": "carousel",

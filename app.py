@@ -13,9 +13,14 @@ from stust import *
 from other import *
 from cocomenu import *
 from fifmenu import *
-
-
-
+from concity import *
+from cowcity import *
+from coscity import *
+from coecity import *
+from fincity import * 
+from fiwcity import *
+from fiscity import *
+from fiecity import *
 #======python的函數庫==========
 import re
 import tempfile, os
@@ -111,114 +116,206 @@ def handle_message(event):
   
     
     elif re.match('CoCo飲料店',message):
-        flex_message = TextSendMessage(text='東北西南部哪一區???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="北部", text="北部CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="西部", text="西部CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="東部", text="東部CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="南部", text="南部CoCo飲料店"))                     
-                            ]))
+        flex_message = FlexSendMessage(
+            alt_text='訊息',
+            contents={
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://i0.wp.com/whityeat.com/wp-content/uploads/20200804043847_39.png?fit=1161%2C1161&quality=100&ssl=1",
+                    "size": "full",
+                    "aspectRatio": "20:13"
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "選擇台灣地區?",
+                            "align": "center",
+                            "margin": "none",
+                            "size": "xl",
+                            "color": "#FFFFFF"
+                        }
+                    ],
+                    "backgroundColor": "#000000"
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "sm",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "height": "sm",
+                            "action": {
+                                "type": "message",
+                                "label": "北",
+                                "text": "北部CoCo飲料店"
+                            },
+                            "color": "#FF5151"
+                        },
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "height": "sm",
+                            "action": {
+                                "type": "message",
+                                "label": "西",
+                                "text": "西部CoCo飲料店"
+                            },
+                            "color": "#FF8040"
+                        },
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "height": "sm",
+                            "action": {
+                                "type": "message",
+                                "label": "南",
+                                "text": "南部CoCo飲料店"
+                            },
+                            "color": "#2894FF"
+                        },
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "height": "sm",
+                            "action": {
+                                "type": "message",
+                                "label": "東",
+                                "text": "東部CoCo飲料店"
+                            },
+                            "color": "#00EC00"
+                        }
+                    ],
+                    "flex": 0,
+                    "backgroundColor": "#000000"
+                }
+            }
+        )
         line_bot_api.reply_message(event.reply_token, flex_message)
+
     elif re.match('50嵐飲料店',message):
-        flex_message = TextSendMessage(text='東北西南部哪一區???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="北部", text="北部50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="西部", text="西部50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="東部", text="東部50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="南部", text="南部50嵐飲料店"))                     
-                            ]))
+        flex_message = FlexSendMessage(
+            alt_text='訊息',
+            contents={
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://lh3.googleusercontent.com/p/AF1QipNxx0ndc2NblqMOhxXUGH93fesb9f-C8e-NeDA5=w1080-h608-p-no-v0",
+                    "size": "full",
+                    "aspectRatio": "20:13"
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "選擇台灣地區?",
+                            "align": "center",
+                            "margin": "none",
+                            "size": "xl",
+                            "color": "#FFFFFF"
+                        }
+                    ],
+                    "backgroundColor": "#642100"
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "sm",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "height": "sm",
+                            "action": {
+                                "type": "message",
+                                "label": "北",
+                                "text": "北部50嵐飲料店"
+                            },
+                            "color": "#FF5151"
+                        },
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "height": "sm",
+                            "action": {
+                                "type": "message",
+                                "label": "西",
+                                "text": "西部50嵐飲料店"
+                            },
+                            "color": "#FF8040"
+                        },
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "height": "sm",
+                            "action": {
+                                "type": "message",
+                                "label": "南",
+                                "text": "南部50嵐飲料店"
+                            },
+                            "color": "#2894FF"
+                        },
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "height": "sm",
+                            "action": {
+                                "type": "message",
+                                "label": "東",
+                                "text": "東部50嵐飲料店"
+                            },
+                            "color": "#00EC00"
+                        }
+                    ],
+                    "flex": 0,
+                    "backgroundColor": "#642100"
+                }
+            }
+        )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
 #北部CoCo飲料店------------------------------------------------------------
-    elif re.match('北部CoCo飲料店',message):
-        flex_message = TextSendMessage(text='哪一縣市???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="臺北市", text="臺北市CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="新北市", text="新北市CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="基隆市", text="基隆市CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="新竹市", text="新竹市CoCo飲料店")),   
-                                QuickReplyButton(action=MessageAction(label="桃園市", text="桃園市CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="新竹縣", text="新竹縣CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="宜蘭縣", text="宜蘭縣CoCo飲料店"))                  
-                            ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('北部CoCo飲料店',stw):
+        message = cnc()
+        line_bot_api.reply_message(event.reply_token,message)        
 #西部CoCo飲料店------------------------------------------------------------
-    elif re.match('西部CoCo飲料店',message):
-        flex_message = TextSendMessage(text='哪一縣市???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="臺中市", text="臺中市CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="苗栗縣", text="苗栗縣CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="彰化縣", text="彰化縣CoCo飲料店")),
-                                QuickReplyButton(action=PostbackAction(label="南投縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!')),   
-                                QuickReplyButton(action=MessageAction(label="雲林縣", text="雲林縣CoCo飲料店"))               
-                            ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('西部CoCo飲料店',stw):
+        message = cwc()
+        line_bot_api.reply_message(event.reply_token,message)
 #南部CoCo飲料店------------------------------------------------------------
-    elif re.match('南部CoCo飲料店',message):
-        flex_message = TextSendMessage(text='哪一縣市???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="高雄市", text="高雄市CoCo飲料店")),
-                                QuickReplyButton(action=MessageAction(label="臺南市", text="臺南市CoCo飲料店")),
-                                QuickReplyButton(action=PostbackAction(label="嘉義縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!')),
-                                QuickReplyButton(action=PostbackAction(label="嘉義市", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!')),   
-                                QuickReplyButton(action=PostbackAction(label="屏東縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!')),
-                                QuickReplyButton(action=MessageAction(label="澎湖縣", text="澎湖縣CoCo飲料店"))                     
-                            ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('南部CoCo飲料店',stw):
+        message = csc()
+        line_bot_api.reply_message(event.reply_token,message)
 #東部CoCo飲料店------------------------------------------------------------
-    elif re.match('東部CoCo飲料店',message):
-        flex_message = TextSendMessage(text='哪一縣市???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=PostbackAction(label="花蓮縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!')),
-                                QuickReplyButton(action=PostbackAction(label="臺東縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!'))            
-                            ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('東部CoCo飲料店',stw):
+        message = cec()
+        line_bot_api.reply_message(event.reply_token,message)
+
 
 #北部50嵐飲料店------------------------------------------------------------
-    elif re.match('北部50嵐飲料店',message):
-        flex_message = TextSendMessage(text='哪一縣市???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="臺北市", text="臺北市50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="新北市", text="新北市50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="基隆市", text="基隆市50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="新竹市", text="新竹市50嵐飲料店")),   
-                                QuickReplyButton(action=MessageAction(label="桃園市", text="桃園市50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="新竹縣", text="新竹縣50嵐飲料店")),
-                                QuickReplyButton(action=PostbackAction(label="宜蘭縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!'))                  
-                            ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('北部50嵐飲料店',stw):
+        message = fnc()
+        line_bot_api.reply_message(event.reply_token,message)
 #西部50嵐飲料店------------------------------------------------------------
-    elif re.match('西部50嵐飲料店',message):
-        flex_message = TextSendMessage(text='哪一縣市???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="臺中市", text="臺中市50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="苗栗縣", text="苗栗縣50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="彰化縣", text="彰化縣50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="南投縣", text="南投縣50嵐飲料店")),   
-                                QuickReplyButton(action=MessageAction(label="雲林縣", text="雲林縣50嵐飲料店"))               
-                            ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('西部50嵐飲料店',stw):
+        message = fwc()
+        line_bot_api.reply_message(event.reply_token,message)
 #南部50嵐飲料店------------------------------------------------------------
-    elif re.match('南部50嵐飲料店',message):
-        flex_message = TextSendMessage(text='哪一縣市???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=MessageAction(label="高雄市", text="高雄市50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="臺南市", text="臺南市50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="嘉義縣", text="嘉義縣50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="嘉義市", text="嘉義市50嵐飲料店")),   
-                                QuickReplyButton(action=MessageAction(label="屏東縣", text="屏東縣50嵐飲料店")),
-                                QuickReplyButton(action=MessageAction(label="澎湖縣", text="澎湖縣50嵐飲料店"))                     
-                            ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('南部50嵐飲料店',stw):
+        message = fsc()
+        line_bot_api.reply_message(event.reply_token,message)
 #東部50嵐飲料店------------------------------------------------------------
-    elif re.match('東部50嵐飲料店',message):
-        flex_message = TextSendMessage(text='哪一縣市???',
-                            quick_reply=QuickReply(items=[
-                                QuickReplyButton(action=PostbackAction(label="花蓮縣", display_text="抱歉沒有相關資訊",data='action=其實不需要謝謝!')),
-                                QuickReplyButton(action=MessageAction(label="臺東縣", text="臺東縣50嵐飲料店"))            
-                            ]))
-        line_bot_api.reply_message(event.reply_token, flex_message)
+    elif re.match('東部50嵐飲料店',stw):
+        message = fec()
+        line_bot_api.reply_message(event.reply_token,message)
 
 
 

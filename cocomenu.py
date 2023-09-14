@@ -4,7 +4,7 @@ from linebot.models import *
 
 def Co():
     message = FlexSendMessage(
-        alt_text='行銷',
+        alt_text='Coco菜單',
         contents={
             "type": "carousel",
             "contents": [
@@ -256,7 +256,7 @@ def Co():
                                 }
                             }
                         ]
-                }
+                    }
                 },
                 {
                     "type": "bubble",

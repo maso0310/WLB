@@ -4,7 +4,7 @@ from linebot.models import *
 
 def oth():
     message = ImagemapSendMessage(
-        base_url ="https://i.imgur.com/eOpIya3.jpg",
+        base_url ="https://i.imgur.com/GxIw2tj.jpg",
         alt_text='需要什麼服務嗎?',
         base_size=BaseSize(height=1330, width=2000),
         actions=[
@@ -36,9 +36,9 @@ def oth():
                     x=0, y=665, width=667, height=665
                 )
             ),
-            URIImagemapAction(
-                #杜芳子菜單
-                link_uri="https://www.popdaily.com.tw/forum/food/1190866",
+            MessageImagemapAction(
+                #喝手搖杯
+                text='想喝手搖杯',
                 area=ImagemapArea(
                     x=667, y=665, width=666, height=665
                 )

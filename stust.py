@@ -3,105 +3,141 @@ from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 def sts():
     message = TemplateSendMessage(
-        alt_text='免費教學影片',
+        alt_text='南台相關資訊',
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
                     thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                     title='南台最新消息',
-                    text=' ',
+                    text='南台科技大學',
                     actions=[
                         URIAction(
                             label='馬上查看',
                             uri='https://news.stust.edu.tw/User/RwdNewsList.aspx'
+                        ),
+                        MessageAction(
+                            label='返回選項',
+                            text='返回選項'
                         )
                     ]
                 ),
                 CarouselColumn(
                         thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                         title='學生輔導問卷',
-                        text=' ',
+                        text='南台科技大學',
                         actions=[
                             URIAction(
                                 label='馬上查看',
                                 uri='https://portal.stust.edu.tw/osa/login.aspx'
+                            ),
+                            MessageAction(
+                                label='返回選項',
+                                text='返回選項'
                             )
                         ]
                     ),
                 CarouselColumn(
                     thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                     title='學雜費減免',
-                    text=' ',
+                    text='南台科技大學',
                     actions=[
                         URIAction(
                             label='馬上查看',
                             uri='https://aura.stust.edu.tw/activity/reg_reduce.aspx'
+                        ),
+                        MessageAction(
+                            label='返回選項',
+                            text='返回選項'
                         )
                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                     title='FlipClass數位學習',
-                    text=' ',
+                    text='南台科技大學',
                     actions=[
                         URIAction(
                             label='馬上查看',
                             uri='https://flipclass.stust.edu.tw/'
+                        ),
+                        MessageAction(
+                            label='返回選項',
+                            text='返回選項'
                         )
                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                     title='課程時序',
-                    text=' ',
+                    text='南台科技大學',
                     actions=[
                         URIAction(
                             label='馬上查看',
                             uri='https://academic.stust.edu.tw/tc/node/course1'
+                        ),
+                        MessageAction(
+                            label='返回選項',
+                            text='返回選項'
                         )
                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                     title='行事曆',
-                    text=' ',
+                    text='南台科技大學',
                     actions=[
                         URIAction(
                             label='馬上查看',
                             uri='https://academic.stust.edu.tw/tc/node/calendar'
+                        ),
+                        MessageAction(
+                            label='返回選項',
+                            text='返回選項'
                         )
                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                     title='學費入口網',
-                    text=' ',
+                    text='南台科技大學',
                     actions=[
                         URIAction(
                             label='馬上查看',
                             uri='https://ebill.chb.com.tw/eBill/cs/student_login'
+                        ),
+                        MessageAction(
+                            label='返回選項',
+                            text='返回選項'
                         )
                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                     title='選課系統',
-                    text=' ',
+                    text='南台科技大學',
                     actions=[
                         URIAction(
                             label='馬上查看',
                             uri='https://course.stust.edu.tw/CourSel/board.aspx'
+                        ),
+                        MessageAction(
+                            label='返回選項',
+                            text='返回選項'
                         )
                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://www.stust.edu.tw/tc/images/about/trans-img.jpg',
                     title='社團活動列表',
-                    text=' ',
+                    text='南台科技大學',
                     actions=[
                         URIAction(
                             label='馬上查看',
                             uri='https://portal.stust.edu.tw/studclub/Pages/stud/acti_studactilist.aspx'
+                        ),
+                        MessageAction(
+                            label='返回選項',
+                            text='返回選項'
                         )
                     ]
                 )

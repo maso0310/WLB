@@ -4,7 +4,7 @@ from linebot.models import *
 def ytm():
     #多樣版組合按鈕
     message = TemplateSendMessage(
-        alt_text='免費教學影片',
+        alt_text='影片瀏覽',
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
@@ -90,8 +90,18 @@ def ytm():
                             uri='https://www.youtube.com/@yingyutu/videos'
                         )
                     ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://yt3.googleusercontent.com/VnKzy6UKvr4EJppQhjxfAtUWD4vibPBYZEU2jziPFrG_0V8XqZTO9TT6b32Fp0GzOoJYucD4OtA=s900-c-k-c0x00ffffff-no-rj',
+                    title=' ',
+                    text=' ',
+                    actions=[
+                        MessageAction(
+                            label='返回選項',
+                            text='返回選項'
+                        )
+                    ]
                 )
-
             ]
         )
     )
