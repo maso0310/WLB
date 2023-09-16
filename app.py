@@ -121,7 +121,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,message) 
     elif re.match('gg網站',stw):
         message = movie()
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=message)) 
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(message)) 
      
   
     
