@@ -7,6 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
+
 #======這裡是呼叫的檔案內容=====
 from ytmovie import *
 from stust import *
@@ -22,12 +23,13 @@ from fiwcity import *
 from fiscity import *
 from fiecity import *
 from rech import *
+from mo import*
 #======python的函數庫==========
 import re
 import tempfile, os
 import datetime
 import time
-
+from bs4 import BeautifulSoup
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 # Channel Access Token
@@ -55,7 +57,7 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = text=event.message.text
+    message = event.message.text
     stw = event.message.text
     #文字表達
     if re.match('呼叫機器人',message):
@@ -64,6 +66,7 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="查看影片", text="查看影片")),
                                 QuickReplyButton(action=MessageAction(label="南台科技大學", text="南台科技大學")),
                                 QuickReplyButton(action=MessageAction(label="其他選項", text="其他選項")),
+                                QuickReplyButton(action=MessageAction(label="gg網站", text="gg網站")),
                                 QuickReplyButton(action=MessageAction(label="想喝手搖杯", text="想喝手搖杯"))
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
@@ -116,8 +119,9 @@ def handle_message(event):
     elif re.match('返回選項',stw):
         message = rec()
         line_bot_api.reply_message(event.reply_token,message) 
-        
-   
+    elif re.match('gg網站',stw):
+        message = movie()
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=message)) 
      
   
     
@@ -324,6 +328,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,message)
 
 
+#臺北市CoCo飲料店
 
 
 
