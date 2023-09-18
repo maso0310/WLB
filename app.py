@@ -24,12 +24,18 @@ from fiscity import *
 from fiecity import *
 from rech import *
 from mo import*
+
 #======python的函數庫==========
 import re
 import tempfile, os
 import datetime
 import time
 from bs4 import BeautifulSoup
+#載入Selenium相關模組
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 # Channel Access Token
@@ -67,11 +73,48 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="南台科技大學", text="南台科技大學")),
                                 QuickReplyButton(action=MessageAction(label="其他選項", text="其他選項")),
                                 QuickReplyButton(action=MessageAction(label="gg網站", text="gg網站")),
+                                QuickReplyButton(action=MessageAction(label="gg網站", text="gg網站")),
                                 QuickReplyButton(action=MessageAction(label="想喝手搖杯", text="想喝手搖杯"))
+
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
         #line_bot_api.reply_message(event.reply_token,TextSendMessage('error')) 
     #  
+    elif re.match('館長最近影片',message):
+        def get_data_with_selenium():    
+            #設定chrome Driver 的執行檔路徑
+            options=Options()
+            options.chrome_executable_path="C:\\Users\\user\\Downloads\\ggg\\chromedriver.exe"
+            #建立Driver物件實體，用程式操作瀏覽器運作
+            driver=webdriver.Chrome(options=options)
+            driver.maximize_window()#視窗最大化
+            driver.get("https://www.youtube.com/@Notorious_3cm/videos")
+            n=0
+            while n<3:
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                time.sleep(5)
+                n+=1
+            titleTags=driver.find_elements(By.CLASS_NAME,"style-scope ytd-rich-grid-media")
+            #video_links = driver.find_elements_by_css_selector(".yt-simple-endpoint.inline-block.style-scope.ytd-thumbnail")
+            links = driver.find_elements(By.CSS_SELECTOR,".yt-simple-endpoint.inline-block.style-scope.ytd-thumbnail")
+            i = 1
+            for titleTag in titleTags:
+                a ="標題",i,":",titleTag.text
+                #print()
+                i+=1  
+            line_bot_api.reply_message(event.reply_token,a)
+            i = 1
+            for link in links:
+                video_url = link.get_attribute("href")
+                if video_url and "/watch?" in video_url:
+                    #print("標題",i,"影片連結:")
+                    #print(video_url)
+                    b = "標題",i,"影片連結:",video_url
+                    i+=1
+                    driver.close()
+            line_bot_api.reply_message(event.reply_token,b)
+    
+
     elif re.match('查看影片',stw):
         message = ytm()
         line_bot_api.reply_message(event.reply_token,message)
