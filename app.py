@@ -25,14 +25,15 @@ from fiecity import *
 from rech import *
 #載入Selenium相關模組
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 #======python的函數庫==========
 import re
 import tempfile, os
-import datetime
+
 import time
-from bs4 import BeautifulSoup
+
 
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
@@ -78,7 +79,8 @@ def handle_message(event):
         #line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))  
     elif re.match('館長最近影片',stw):
         def body():
-            driver=webdriver.Chrome()
+            service = ChromeService(executable_path=ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service)
             driver.maximize_window()#視窗最大化
             driver.get("https://www.youtube.com/@Notorious_3cm/videos")
             n=0
