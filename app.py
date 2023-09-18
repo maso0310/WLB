@@ -23,7 +23,6 @@ from fiwcity import *
 from fiscity import *
 from fiecity import *
 from rech import *
-from mo import*
 #載入Selenium相關模組
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -71,21 +70,15 @@ def handle_message(event):
                                 QuickReplyButton(action=MessageAction(label="查看影片", text="查看影片")),
                                 QuickReplyButton(action=MessageAction(label="南台科技大學", text="南台科技大學")),
                                 QuickReplyButton(action=MessageAction(label="其他選項", text="其他選項")),
-                                QuickReplyButton(action=MessageAction(label="gg網站", text="gg網站")),
-                                QuickReplyButton(action=MessageAction(label="gg網站", text="gg網站")),
+                                QuickReplyButton(action=MessageAction(label="館長最近影片", text="館長最近影片")),
                                 QuickReplyButton(action=MessageAction(label="想喝手搖杯", text="想喝手搖杯"))
 
                             ]))
         line_bot_api.reply_message(event.reply_token, flex_message)
-        #line_bot_api.reply_message(event.reply_token,TextSendMessage('error')) 
-    #  
-    elif re.match('館長最近影片',message):
-        def get_data_with_selenium():    
-            #設定chrome Driver 的執行檔路徑
-            options=Options()
-            options.chrome_executable_path="C:\\Users\\user\\Downloads\\ggg\\chromedriver.exe"
-            #建立Driver物件實體，用程式操作瀏覽器運作
-            driver=webdriver.Chrome(options=options)
+        #line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))  
+    elif re.match('館長最近影片',stw):
+        def body():
+            driver=webdriver.Chrome()
             driver.maximize_window()#視窗最大化
             driver.get("https://www.youtube.com/@Notorious_3cm/videos")
             n=0
@@ -93,26 +86,25 @@ def handle_message(event):
                 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                 time.sleep(5)
                 n+=1
+
             titleTags=driver.find_elements(By.CLASS_NAME,"style-scope ytd-rich-grid-media")
-            #video_links = driver.find_elements_by_css_selector(".yt-simple-endpoint.inline-block.style-scope.ytd-thumbnail")
             links = driver.find_elements(By.CSS_SELECTOR,".yt-simple-endpoint.inline-block.style-scope.ytd-thumbnail")
+            video_data = []
             i = 1
-            for titleTag in titleTags:
-                a ="標題",i,":",titleTag.text
-                #print()
-                i+=1  
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(message=a))
-            
-            i = 1
-            for link in links:
-                video_url = link.get_attribute("href")
+            for titleTag, link in zip(titleTags, links):
+                titel_menu="標題",i,":",titleTag.text
+                link.get_attribute("href")
                 if video_url and "/watch?" in video_url:
-                    #print("標題",i,"影片連結:")
-                    #print(video_url)
-                    b = "標題",i,"影片連結:",video_url
-                    i+=1
-                    driver.close()
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(message=b))
+                    video_url = "標題",i,"影片連結:"
+                    video_data.append((titel_menu,video_url))
+            driver.close()        
+            message = []
+            message.append(video_data)
+            return message
+        message=body()
+        line_bot_api.reply_message(event.reply_token,message)
+
+
     
 
     elif re.match('查看影片',stw):
@@ -162,9 +154,7 @@ def handle_message(event):
     elif re.match('返回選項',stw):
         message = rec()
         line_bot_api.reply_message(event.reply_token,message) 
-    elif re.match('gg網站',stw):
-        a = movie()
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(stw=a)) 
+   
      
   
     
