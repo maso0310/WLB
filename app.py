@@ -24,17 +24,16 @@ from fiscity import *
 from fiecity import *
 from rech import *
 from mo import*
-
+#載入Selenium相關模組
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 #======python的函數庫==========
 import re
 import tempfile, os
 import datetime
 import time
 from bs4 import BeautifulSoup
-#載入Selenium相關模組
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
 
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
@@ -102,7 +101,8 @@ def handle_message(event):
                 a ="標題",i,":",titleTag.text
                 #print()
                 i+=1  
-            line_bot_api.reply_message(event.reply_token,a)
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(message=a))
+            
             i = 1
             for link in links:
                 video_url = link.get_attribute("href")
@@ -112,7 +112,7 @@ def handle_message(event):
                     b = "標題",i,"影片連結:",video_url
                     i+=1
                     driver.close()
-            line_bot_api.reply_message(event.reply_token,b)
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(message=b))
     
 
     elif re.match('查看影片',stw):
