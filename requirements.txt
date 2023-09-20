@@ -9,3 +9,4 @@ SnowNLP
 emoji
 pyshorteners
 scipy
+selenium==4.12.0
