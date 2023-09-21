@@ -27,6 +27,7 @@ from rech import *
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 #======python的函數庫==========
 import re
@@ -79,8 +80,15 @@ def handle_message(event):
         #line_bot_api.reply_message(event.reply_token,TextSendMessage('error'))  
     elif re.match('館長最近影片',stw):
         def body():
-            service = ChromeService(executable_path=ChromeDriverManager().install())
-            driver = webdriver.Chrome(service=service)
+            chromeOption = webdriver.ChromeOptions()
+            chromeOption.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0")
+            chromeOption.add_argument("start-maximized")
+            chromeOption.add_argument("--headless")
+            chromeOption.add_argument("--no-sandbox")
+            chromeOption.add_argument("--disable-dev-shm-usage")
+        
+            service = Service()
+            driver = webdriver.Chrome(service=service, options=chromeOption)
             driver.maximize_window()#視窗最大化
             driver.get("https://www.youtube.com/@Notorious_3cm/videos")
             n=0
